@@ -4,7 +4,10 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "chunk": "node src/scripts/chunk-documents.js",
+    "ingest": "node src/scripts/ingest.js",
+    "ingest:dry-run": "node src/scripts/ingest.js --dry-run"
   },
   "dependencies": {
     "@google/genai": "^2.22.0",
