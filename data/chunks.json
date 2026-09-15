@@ -1,0 +1,834 @@
+[
+  {
+    "id": "hr-policies/01-annual-leave/0",
+    "text": "Annual Leave Policy Effective date: January 1, 2024 Owner: People Operations Entitlement All full-time employees accrue 20 days of paid annual leave per calendar year (pro-rated for part-time employees based on contracted hours). Accrual begins on the first day of employment. Employees in their first year accrue leave monthly at a rate of 1.67 days per month. Requesting Leave Leave requests must be submitted through the HR portal at least five business days in advance for absences of one to three days, and at least fifteen business days in advance for absences of four or more consecutive days. Requests are subject to manager approval and must consider team coverage requirements. Managers should respond within three business days of a request being submitted. Carry-Over Up to 5 days of unused annual leave may be carried over into the following calendar year. Carried-over leave must be used before March 31 or it will lapse. No cash payment is made for lapsed leave. Leave on Termination Upon termination of employment, accrued and unused annual leave will be paid out at the employee's current base daily rate. Public Holidays Public holidays are in addition to annual leave entitlement. Where an employee is required to work on a public holiday, they will receive a day off in lieu to be taken within 60 days.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "01-annual-leave",
+      "filePath": "hr-policies/01-annual-leave.md",
+      "chunkIndex": 0,
+      "totalChunks": 1,
+      "heading": "Leave on Termination",
+      "wordCount": 219
+    }
+  },
+  {
+    "id": "hr-policies/02-sick-leave/0",
+    "text": "Sick Leave Policy Effective date: January 1, 2024 Owner: People Operations Entitlement Full-time employees are entitled to 10 days of paid sick leave per calendar year. Sick leave does not accrue — the full balance is available from January 1 each year (or from the date of hire for new joiners). Unused sick leave does not carry over and is not paid out on termination. Notification Employees must notify their manager by 9:00 AM on the first day of absence, or as early as reasonably practicable. Notification should be made by phone or messaging platform, not email alone. Medical Certification For absences of three or more consecutive days, a medical certificate from a registered practitioner must be provided within two business days of returning to work. The company reserves the right to request a certificate for any absence where a pattern of short-term absences has been observed. Extended Illness If an employee exhausts their paid sick leave entitlement, additional absence may be covered by: 1. Annual leave (at the employee's request) 2. Unpaid medical leave, approved by People Operations Employees on extended medical leave of more than four consecutive weeks should contact People Operations to discuss return-to-work planning and any available accommodations.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "02-sick-leave",
+      "filePath": "hr-policies/02-sick-leave.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Extended Illness",
+      "wordCount": 202
+    }
+  },
+  {
+    "id": "hr-policies/02-sick-leave/1",
+    "text": "covered by: 1. Annual leave (at the employee's request) 2. Unpaid medical leave, approved by People Operations Employees on extended medical leave of more than four consecutive weeks should contact People Operations to discuss return-to-work planning and any available accommodations. Return to Work Following an absence of five or more consecutive days, employees are required to complete a return-to-work discussion with their manager before resuming full duties.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "02-sick-leave",
+      "filePath": "hr-policies/02-sick-leave.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Extended Illness",
+      "wordCount": 67
+    }
+  },
+  {
+    "id": "hr-policies/03-remote-work/0",
+    "text": "Remote Work Policy Effective date: March 1, 2024 Owner: People Operations Eligibility Remote work arrangements are available to employees whose roles do not require a consistent physical presence (e.g., on-site lab work, hardware maintenance, front-desk roles). Eligibility is determined by the employee's manager in consultation with People Operations. Hybrid Schedule The default arrangement is hybrid: employees are expected to be in the office a minimum of two days per week. Specific anchor days (days when whole teams are expected in-person) are set by department heads and communicated at least two weeks in advance. Fully Remote Arrangements Fully remote arrangements require written approval from the employee's department head and People Operations. Requests should be submitted using the Remote Work Request Form and will be reviewed within ten business days. Equipment and Workspace The company provides a standard laptop and peripherals. Employees are responsible for maintaining a safe, distraction-free workspace and a reliable internet connection (minimum 25 Mbps download / 10 Mbps upload recommended). A one-time home office stipend of $500 is available to employees on approved fully remote arrangements. Claims must be submitted within 90 days of approval. Security Remote employees must: - Connect to company systems via the approved VPN. - Not work from public Wi-Fi without VPN active. - Lock their screen whenever stepping away. - Store all company data in approved cloud storage, not on local drives.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "03-remote-work",
+      "filePath": "hr-policies/03-remote-work.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Equipment and Workspace",
+      "wordCount": 229
+    }
+  },
+  {
+    "id": "hr-policies/03-remote-work/1",
+    "text": "employees must: - Connect to company systems via the approved VPN. - Not work from public Wi-Fi without VPN active. - Lock their screen whenever stepping away. - Store all company data in approved cloud storage, not on local drives. Availability Remote employees are expected to be reachable during core hours (10:00 AM – 4:00 PM in their local time zone) and to attend all scheduled meetings with camera on unless technical issues prevent it. Review Remote work arrangements are reviewed annually or whenever the employee's role or performance status changes significantly.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "03-remote-work",
+      "filePath": "hr-policies/03-remote-work.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Equipment and Workspace",
+      "wordCount": 92
+    }
+  },
+  {
+    "id": "hr-policies/04-expense-reimbursement/0",
+    "text": "Expense Reimbursement Policy Effective date: January 1, 2024 Owner: Finance & People Operations Scope This policy applies to all employees incurring business expenses on behalf of the company. Personal expenses are not reimbursable under any circumstances. Submission Deadlines Expense reports must be submitted within 30 days of the expense being incurred. Reports submitted after 60 days will not be reimbursed without written approval from the CFO. Pre-Approval Requirements The following require written pre-approval from the employee's manager before the expense is incurred: - Any single expense over $500 - International travel - Conference registrations over $300 - Software or subscription purchases Travel Flights: Economy class for all flights under 6 hours. Business class is permitted for flights of 6 hours or more, subject to manager approval. Hotels: Up to $250/night in standard cities; up to $350/night in high-cost cities (New York, San Francisco, London, Zurich, Tokyo). Exceptions require VP-level approval. Ground transport: Rideshare or taxi is reimbursable when public transit is impractical. Personal car use is reimbursed at the current IRS standard mileage rate. Meals while travelling: Up to $75/day, excluding alcohol. Alcohol is never reimbursable. Meals and Entertainment Business meals with clients or prospects are reimbursable up to $100/person. The expense report must include the names and company affiliations of all attendees and the business purpose.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "04-expense-reimbursement",
+      "filePath": "hr-policies/04-expense-reimbursement.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Travel",
+      "wordCount": 217
+    }
+  },
+  {
+    "id": "hr-policies/04-expense-reimbursement/1",
+    "text": "Up to $75/day, excluding alcohol. Alcohol is never reimbursable. Meals and Entertainment Business meals with clients or prospects are reimbursable up to $100/person. The expense report must include the names and company affiliations of all attendees and the business purpose. Internal team meals are reimbursable up to $40/person and require manager approval. Receipts Original itemised receipts are required for all expenses over $25. Credit card statements are not acceptable as sole documentation. Reimbursement Timeline Approved expense reports are processed within 10 business days and paid via the employee's regular payroll or direct bank transfer. Non-Reimbursable Items - Alcohol (in any context) - Personal entertainment, mini-bar charges, in-flight Wi-Fi for personal use - Traffic or parking fines - Expenses for family members or guests not on company business - Clothing or personal grooming",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "04-expense-reimbursement",
+      "filePath": "hr-policies/04-expense-reimbursement.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Travel",
+      "wordCount": 132
+    }
+  },
+  {
+    "id": "hr-policies/05-onboarding/0",
+    "text": "Employee Onboarding Policy Effective date: January 1, 2024 Owner: People Operations Purpose This policy ensures every new employee has a consistent, structured start that gives them the context, tools, and relationships they need to contribute effectively. Pre-boarding (Before Day 1) People Operations is responsible for: - Sending a welcome email with first-day logistics at least three business days before start date. - Provisioning accounts (email, HR portal, Slack, code repositories) so they are ready on day one. - Shipping or arranging collection of equipment at least two business days before start date. - Assigning an onboarding buddy from the same or an adjacent team. The hiring manager is responsible for: - Preparing a 30/60/90-day plan and sharing it with the new hire in the welcome email. - Scheduling intro meetings with key stakeholders in the first two weeks. Week 1 Day Activity ----- ----------- Day 1 IT setup, HR portal orientation, team introductions, office tour Day 2 Benefits enrollment (must be completed within 5 business days) Day 3 Compliance training: Code of Conduct, Data Privacy, Security Awareness Day 4–5 Role-specific tool setup and initial project briefing 30/60/90-Day Milestones 30 days: New hire has completed all mandatory compliance training, understands team processes, and has made a first meaningful contribution.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "05-onboarding",
+      "filePath": "hr-policies/05-onboarding.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "30/60/90-Day Milestones",
+      "wordCount": 208
+    }
+  },
+  {
+    "id": "hr-policies/05-onboarding/1",
+    "text": "Compliance training: Code of Conduct, Data Privacy, Security Awareness Day 4–5 Role-specific tool setup and initial project briefing 30/60/90-Day Milestones 30 days: New hire has completed all mandatory compliance training, understands team processes, and has made a first meaningful contribution. 60 days: New hire is operating independently on assigned tasks and has completed a first check-in with their manager using the onboarding check-in template. 90 days: Formal onboarding closes. Manager and new hire complete the 90-day review form in the HR portal. Any unresolved gaps are documented with an action plan. Onboarding Buddy Each new hire is paired with an onboarding buddy for their first 60 days. The buddy's role is informal: answer day-to-day questions, make social introductions, and help the new hire navigate company norms. Buddies are not responsible for performance management. Mandatory Training The following must be completed within the first 10 business days: - Code of Conduct - Data Privacy and GDPR Awareness - Information Security Basics - Anti-Harassment and Inclusion Completion is tracked automatically in the Learning Management System. Failure to complete within the deadline will be escalated to the new hire's manager.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "05-onboarding",
+      "filePath": "hr-policies/05-onboarding.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "30/60/90-Day Milestones",
+      "wordCount": 187
+    }
+  },
+  {
+    "id": "hr-policies/06-performance-reviews/0",
+    "text": "Performance Review Policy Effective date: January 1, 2024 Owner: People Operations Review Cycle Performance reviews are conducted twice per year: - Mid-year review: Completed in July. Primarily a development-focused check-in; no compensation changes result directly from this cycle. - Annual review: Completed in December. Informs compensation adjustments, promotion decisions, and the following year's goal-setting. New employees hired within three months of a review cycle are exempt from that cycle and will participate in the next one. Process 1. Goal-setting: At the start of each year (or within 30 days of hire), employees set 3–5 SMART goals in the HR portal in collaboration with their manager. 2. Self-assessment: Employees complete a self-assessment form in the HR portal at least five business days before their scheduled review meeting. 3. Manager assessment: Managers complete their assessment independently before the review meeting. 4. Review meeting: A 60-minute 1:1 between employee and manager to discuss performance, development areas, and goals. 5. Calibration: Managers participate in a calibration session with their peer group to ensure rating consistency before results are finalised. 6. Outcome communication: Final ratings and any compensation changes are communicated to employees within two weeks of calibration closing. Rating Scale Rating Description -------- ------------- 5 – Exceptional Consistently exceeds all goals; significant impact beyond role scope 4 – Exceeds expectations Meets all goals and exceeds several; demonstrably above role level 3 – Meets expectations Meets all or most goals; fully effective in role 2 – Partially meets expectations Meets some goals; improvement needed in key areas 1 – Does not meet expectations Significant gaps; performance improvement plan required",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "06-performance-reviews",
+      "filePath": "hr-policies/06-performance-reviews.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Process",
+      "wordCount": 264
+    }
+  },
+  {
+    "id": "hr-policies/06-performance-reviews/1",
+    "text": "role level 3 – Meets expectations Meets all or most goals; fully effective in role 2 – Partially meets expectations Meets some goals; improvement needed in key areas 1 – Does not meet expectations Significant gaps; performance improvement plan required Performance Improvement Plans (PIPs) Employees receiving a rating of 1 will be placed on a formal PIP within 10 business days of the review. A PIP document specifies measurable improvement targets, a timeline (typically 60–90 days), and the support the employee will receive. People Operations must be involved in all PIPs. Appeals Employees may appeal their rating by submitting a written request to People Operations within 10 business days of receiving their review outcome. Appeals are reviewed by the employee's skip-level manager and a People Operations representative.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "06-performance-reviews",
+      "filePath": "hr-policies/06-performance-reviews.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Process",
+      "wordCount": 127
+    }
+  },
+  {
+    "id": "hr-policies/07-code-of-conduct/0",
+    "text": "Code of Conduct Effective date: January 1, 2024 Owner: Legal & People Operations Our Commitment We are committed to maintaining a workplace where every person is treated with dignity and respect. This Code of Conduct applies to all employees, contractors, and anyone acting on the company's behalf — in the office, while travelling on business, at company events, and in online interactions related to work. Expected Behaviours - Integrity: Be honest in all professional dealings. Do not misrepresent your work, qualifications, or the company. - Respect: Treat colleagues, customers, and partners with courtesy regardless of role, background, or opinion. - Collaboration: Share information openly, give credit generously, and resolve disagreements constructively. - Accountability: Take ownership of your work and its outcomes. Raise problems early; don't hide mistakes. - Confidentiality: Protect proprietary information, customer data, and colleague details as outlined in the Data Privacy Policy. Prohibited Conduct The following behaviours are grounds for disciplinary action up to and including termination: - Harassment, bullying, or intimidation of any kind (see Anti-Harassment Policy) - Discrimination based on race, gender, age, religion, disability, sexual orientation, or any other protected characteristic - Dishonesty, fraud, or falsification of records - Misappropriation of company or client assets - Violations of data protection laws or company security policies - Retaliation against anyone who raises a concern in good faith",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "07-code-of-conduct",
+      "filePath": "hr-policies/07-code-of-conduct.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Expected Behaviours",
+      "wordCount": 221
+    }
+  },
+  {
+    "id": "hr-policies/07-code-of-conduct/1",
+    "text": "or any other protected characteristic - Dishonesty, fraud, or falsification of records - Misappropriation of company or client assets - Violations of data protection laws or company security policies - Retaliation against anyone who raises a concern in good faith Conflicts of Interest Employees must disclose any situation where personal interests could conflict with the company's interests — including outside employment, financial stakes in clients or competitors, and personal relationships with direct reports or vendors. Disclosures are made to your manager and People Operations using the Conflict of Interest Declaration Form. Reporting Concerns Concerns about potential violations can be reported to: - Your manager or skip-level manager - People Operations (people@company.com) - The anonymous Ethics Hotline (details on the intranet) The company does not tolerate retaliation against employees who report concerns in good faith. Consequences Violations are investigated promptly and impartially. Outcomes depend on the severity of the violation and may include a formal warning, performance improvement plan, suspension, or termination.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "07-code-of-conduct",
+      "filePath": "hr-policies/07-code-of-conduct.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Expected Behaviours",
+      "wordCount": 161
+    }
+  },
+  {
+    "id": "hr-policies/08-parental-leave/0",
+    "text": "Parental Leave Policy Effective date: January 1, 2024 Owner: People Operations Eligibility All employees who have completed at least six months of continuous employment are eligible for parental leave. This policy applies to birth parents, non-birth parents, and adoptive parents equally. Entitlement Role Duration Pay ------ ---------- ----- Primary caregiver 16 weeks 100% of base salary Secondary caregiver 4 weeks 100% of base salary Employees may extend leave beyond these periods using accrued annual leave, unpaid leave, or a combination. Extended leave must be agreed with People Operations at least four weeks before the planned start date. Notification Employees should notify their manager and People Operations as early as reasonably practicable, and no later than eight weeks before the intended leave start date. Written notice should include the expected start date and anticipated return date. Flexible Return Employees returning from primary caregiver leave may request a phased return of up to four weeks (e.g., 3 days/week for two weeks, then 4 days/week for two weeks before returning to full hours). Requests must be made at least two weeks before the planned return date and are subject to operational feasibility. Job Protection Employees on parental leave retain their role or an equivalent role at the same grade and compensation. Performance reviews during leave will not be penalised; employees will receive the average team rating for any review cycle occurring entirely during leave.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "08-parental-leave",
+      "filePath": "hr-policies/08-parental-leave.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Flexible Return",
+      "wordCount": 231
+    }
+  },
+  {
+    "id": "hr-policies/08-parental-leave/1",
+    "text": "Employees on parental leave retain their role or an equivalent role at the same grade and compensation. Performance reviews during leave will not be penalised; employees will receive the average team rating for any review cycle occurring entirely during leave. Benefits During Leave All benefits (health insurance, pension contributions, equity vesting) continue without interruption during paid parental leave. Keeping in Touch Employees on parental leave may, entirely voluntarily, work up to 10 \"Keeping in Touch\" days without affecting their leave entitlement. These days cannot be required by the company.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "08-parental-leave",
+      "filePath": "hr-policies/08-parental-leave.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Flexible Return",
+      "wordCount": 89
+    }
+  },
+  {
+    "id": "hr-policies/09-learning-and-development/0",
+    "text": "Learning & Development Policy Effective date: January 1, 2024 Owner: People Operations Philosophy We invest in employee growth because skilled, curious people build better products. Every employee is expected to spend time learning — not just when directed, but as an ongoing professional habit. Annual Learning Budget Each full-time employee receives an annual learning budget of $1,500 to spend on: - Online courses and learning platforms (Coursera, Pluralsight, O'Reilly, etc.) - Books and technical resources - Conferences and workshops (registration fee only; travel and accommodation are covered separately under the Expense Reimbursement Policy if the event is approved) - Professional certifications and exam fees Part-time employees receive a pro-rated budget based on contracted hours. The budget resets on January 1 each year and does not roll over. Approval Process Purchases under $200 can be made and expensed without prior approval. Purchases between $200 and $1,500 require manager approval via the HR portal. Requests above the annual budget cap require VP-level approval and a documented business case. Study Leave Employees sitting a professional certification exam are entitled to one paid study day per exam, up to a maximum of three study days per calendar year. Study days must be approved by the manager at least five business days in advance.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "09-learning-and-development",
+      "filePath": "hr-policies/09-learning-and-development.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Approval Process",
+      "wordCount": 209
+    }
+  },
+  {
+    "id": "hr-policies/09-learning-and-development/1",
+    "text": "sitting a professional certification exam are entitled to one paid study day per exam, up to a maximum of three study days per calendar year. Study days must be approved by the manager at least five business days in advance. Internal Learning - A library of internal courses is available on the Learning Management System (LMS). - Employees are encouraged to share knowledge by running lunch-and-learn sessions. Facilitators receive a $50 voucher per session delivered. - Mentorship pairings are available through the HR portal. Both mentors and mentees are expected to commit to at least one hour per month for a minimum six-month engagement. Training Repayment If the company funds external training or a certification costing over $500 and the employee leaves within 12 months of completing it, a pro-rated repayment applies: - Departure within 6 months: 100% repayment - Departure between 6 and 12 months: 50% repayment - Departure after 12 months: no repayment Repayment does not apply if the employee is made redundant.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "09-learning-and-development",
+      "filePath": "hr-policies/09-learning-and-development.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Approval Process",
+      "wordCount": 165
+    }
+  },
+  {
+    "id": "hr-policies/10-anti-harassment/0",
+    "text": "Anti-Harassment and Inclusion Policy Effective date: January 1, 2024 Owner: People Operations & Legal Commitment The company maintains a zero-tolerance policy towards harassment, discrimination, and bullying. This applies to all employees, contractors, interns, and visitors in any work-related context — in the office, remote, at client sites, at company events, and on work-related social media. What Constitutes Harassment Harassment is unwanted conduct related to a protected characteristic (race, gender, gender identity, age, disability, religion, sexual orientation, nationality, or any other characteristic protected by applicable law) that has the purpose or effect of: - Violating a person's dignity, or - Creating an intimidating, hostile, degrading, humiliating, or offensive environment. Examples include (but are not limited to): offensive jokes, derogatory comments, unwanted physical contact, persistent unwanted personal attention, exclusion from work activities, and inappropriate messages. Sexual harassment includes unwanted sexual advances, requests for sexual favours, and any other verbal or physical conduct of a sexual nature. Reporting Anyone who experiences or witnesses harassment should report it through any of the following channels: 1. Direct report to manager — if the manager is not involved in the incident. 2. People Operations — people@company.com or in person. 3. Anonymous Ethics Hotline — details available on the intranet. Anonymous reports will be investigated to the extent possible given available information.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "10-anti-harassment",
+      "filePath": "hr-policies/10-anti-harassment.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Reporting",
+      "wordCount": 215
+    }
+  },
+  {
+    "id": "hr-policies/10-anti-harassment/1",
+    "text": "— if the manager is not involved in the incident. 2. People Operations — people@company.com or in person. 3. Anonymous Ethics Hotline — details available on the intranet. Anonymous reports will be investigated to the extent possible given available information. There is no time limit on reporting, but prompt reporting helps ensure a thorough investigation. Investigation Process All reports are taken seriously and investigated promptly, typically within 10 business days. Investigations are conducted by People Operations, with Legal involvement where appropriate. Both the complainant and the subject will have the opportunity to present their account. Confidentiality is maintained to the extent possible. Outcomes If harassment is substantiated, outcomes may include formal warning, mandatory training, transfer, demotion, or termination, depending on severity. Non-Retaliation Retaliation against anyone who makes a good-faith report or participates in an investigation is a separate, serious violation of this policy and will be dealt with as such. Training All employees complete anti-harassment training within their first 10 business days and annually thereafter. Managers receive additional bystander intervention and investigation training.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "10-anti-harassment",
+      "filePath": "hr-policies/10-anti-harassment.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Reporting",
+      "wordCount": 173
+    }
+  },
+  {
+    "id": "hr-policies/11-it-and-security/0",
+    "text": "IT Acceptable Use and Security Policy Effective date: January 1, 2024 Owner: IT & People Operations Scope This policy governs the use of all company-owned or company-managed devices, networks, software, and data — including systems accessed remotely. Acceptable Use Company technology resources are provided for business purposes. Incidental personal use is permitted provided it is brief, does not consume significant bandwidth, and does not involve any prohibited content or activities. Prohibited uses include: - Accessing, storing, or distributing illegal, obscene, or discriminatory content - Installing unlicensed or unauthorised software - Attempting to circumvent security controls or access systems without authorisation - Using company resources to operate a personal business or for extended personal activities - Sharing credentials with anyone, including colleagues Password and Authentication - All accounts must use passwords of at least 14 characters or passphrases. - Multi-factor authentication (MFA) is mandatory for all company accounts. - Passwords must not be reused across systems or shared via unencrypted channels. - A company-approved password manager is provided to all employees at no cost. Device Security - Company devices must have full-disk encryption enabled at all times. - Automatic screen lock must be set to 5 minutes or less. - Operating system and application updates must be applied within 72 hours of release. - Employees must not disable or circumvent endpoint protection software.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "11-it-and-security",
+      "filePath": "hr-policies/11-it-and-security.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Password and Authentication",
+      "wordCount": 222
+    }
+  },
+  {
+    "id": "hr-policies/11-it-and-security/1",
+    "text": "enabled at all times. - Automatic screen lock must be set to 5 minutes or less. - Operating system and application updates must be applied within 72 hours of release. - Employees must not disable or circumvent endpoint protection software. Data Handling - Customer data, employee data, and intellectual property are classified as Confidential and must be stored only in approved systems. - Confidential data must not be emailed to personal accounts or stored on personal devices or unapproved cloud services. - When in doubt about data classification, consult the Data Classification Guide on the intranet. Incident Reporting Suspected security incidents — including lost or stolen devices, phishing clicks, unusual account activity, or accidental data exposure — must be reported to the IT helpdesk (security@company.com) within one hour of discovery. Delays in reporting may be treated as a policy violation. Monitoring The company reserves the right to monitor activity on company-owned systems and networks for security and compliance purposes. Employees have no expectation of privacy on company devices or networks. Consequences Violations may result in suspension of access, disciplinary action, or termination.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "11-it-and-security",
+      "filePath": "hr-policies/11-it-and-security.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Password and Authentication",
+      "wordCount": 182
+    }
+  },
+  {
+    "id": "hr-policies/12-grievance-procedure/0",
+    "text": "Grievance Procedure Effective date: January 1, 2024 Owner: People Operations Purpose This procedure provides a fair and consistent process for employees to raise workplace concerns. All grievances are handled with confidentiality and without fear of retaliation. What Is a Grievance? A grievance is a formal complaint about a workplace issue that has not been resolved informally. Examples include concerns about working conditions, application of company policies, interpersonal conflict, or perceived unfair treatment. Matters covered by the Anti-Harassment Policy follow a separate investigation procedure. Step 1 — Informal Resolution (Recommended First Step) Before raising a formal grievance, employees are encouraged to speak directly with the person involved or raise the matter with their manager. Many issues can be resolved quickly and informally. People Operations can provide coaching support at this stage on request. Step 2 — Formal Grievance If the informal approach fails or is not appropriate, the employee submits a written grievance to People Operations using the Grievance Submission Form (available on the intranet). The form should describe: - The nature of the grievance - Key dates and facts - Any individuals involved - The outcome the employee is seeking Acknowledgement: People Operations will acknowledge receipt within two business days.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "12-grievance-procedure",
+      "filePath": "hr-policies/12-grievance-procedure.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Step 2 — Formal Grievance",
+      "wordCount": 200
+    }
+  },
+  {
+    "id": "hr-policies/12-grievance-procedure/1",
+    "text": "(available on the intranet). The form should describe: - The nature of the grievance - Key dates and facts - Any individuals involved - The outcome the employee is seeking Acknowledgement: People Operations will acknowledge receipt within two business days. Step 3 — Investigation A People Operations representative (or an appointed neutral investigator for complex cases) will: - Meet with the employee to understand the grievance in full - Interview relevant witnesses - Review any relevant documentation The investigation will be completed within 15 business days of acknowledgement, or the employee will be notified of a revised timeline. Step 4 — Outcome The employee will receive a written outcome within five business days of the investigation concluding. The outcome will explain the findings and any actions the company will take. Step 5 — Appeal If the employee is not satisfied with the outcome, they may appeal in writing to the Head of People Operations within 10 business days of receiving the outcome. The appeal will be reviewed by a senior leader who was not involved in the original investigation. The appeal outcome is final. Record Keeping Grievance records are kept confidentially in the employee's HR file and are retained for five years after the employee's departure.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "12-grievance-procedure",
+      "filePath": "hr-policies/12-grievance-procedure.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Step 5 — Appeal",
+      "wordCount": 206
+    }
+  },
+  {
+    "id": "hr-policies/13-compensation-and-pay/0",
+    "text": "Compensation and Pay Policy Effective date: January 1, 2024 Owner: People Operations & Finance Pay Cycle Employees are paid on the last business day of each month via direct bank transfer. The payroll cut-off for changes (new hires, salary adjustments, terminations) is the 15th of each month. Changes received after the cut-off take effect in the following month's payroll. Salary Review Salary reviews are conducted once per year, following the annual performance review cycle (December). Adjustments, if any, are effective from February 1 of the following year. A salary review does not guarantee an increase. Factors considered in salary reviews include: - Annual performance rating - Position within the salary band for the role - Internal equity - External market benchmarking (conducted annually by People Operations) Salary Bands Every role is assigned to a salary band based on job level and function. Bands are reviewed annually against market data. Employees may request to know their band by contacting People Operations. The company does not disclose individual salaries. Bonus Programme Eligible employees (as defined in their employment contract) participate in an annual discretionary bonus programme. Target bonus amounts are expressed as a percentage of base salary by level. Actual payouts depend on company performance and individual performance ratings. Bonuses are paid in February, alongside the first payroll that reflects the salary review.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "13-compensation-and-pay",
+      "filePath": "hr-policies/13-compensation-and-pay.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Salary Bands",
+      "wordCount": 221
+    }
+  },
+  {
+    "id": "hr-policies/13-compensation-and-pay/1",
+    "text": "discretionary bonus programme. Target bonus amounts are expressed as a percentage of base salary by level. Actual payouts depend on company performance and individual performance ratings. Bonuses are paid in February, alongside the first payroll that reflects the salary review. Employees must be actively employed on the bonus payment date to receive a payout. Pro-rata bonuses are not paid for partial years unless specified in the employment contract. Payslips Digital payslips are available in the HR portal by the 25th of each month. Employees should review payslips promptly and raise any discrepancies with People Operations within 30 days. Pay Queries Payroll queries should be directed to payroll@company.com. Urgent issues (e.g., a missing payment) are resolved within two business days.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "13-compensation-and-pay",
+      "filePath": "hr-policies/13-compensation-and-pay.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Salary Bands",
+      "wordCount": 119
+    }
+  },
+  {
+    "id": "hr-policies/14-offboarding/0",
+    "text": "Offboarding Policy Effective date: January 1, 2024 Owner: People Operations Resignation Employees resigning from their position must submit written notice to their manager and People Operations. Notice periods by level: Level Notice Period ------- --------------- Individual contributor 2 weeks Senior / Lead 4 weeks Manager and above 6 weeks The company may, at its discretion, waive part or all of the notice period and pay in lieu. Notice Period During the notice period, the employee is expected to: - Continue performing their duties to the same standard - Participate in handover planning - Document ongoing work, processes, and contacts to a level agreed with their manager The company reserves the right to place an employee on garden leave during their notice period while continuing to pay their salary. Exit Interview People Operations will invite the departing employee to an exit interview, typically in the final week. Participation is voluntary. Feedback is aggregated and used to improve the employee experience; individual responses are kept confidential from the employee's manager. Equipment Return All company equipment (laptop, accessories, access cards, etc.) must be returned by the last day of employment. Employees will be invoiced for unreturned equipment at replacement cost. System Access IT will revoke all system access at end of business on the employee's last day, or earlier if required by security policy (e.g., involuntary termination). Employees should ensure personal files are removed from company systems before their last day; the company is not responsible for personal data left on company devices.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "14-offboarding",
+      "filePath": "hr-policies/14-offboarding.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Equipment Return",
+      "wordCount": 250
+    }
+  },
+  {
+    "id": "hr-policies/14-offboarding/1",
+    "text": "the employee's last day, or earlier if required by security policy (e.g., involuntary termination). Employees should ensure personal files are removed from company systems before their last day; the company is not responsible for personal data left on company devices. Final Pay The final pay run includes: - Salary up to and including the last day - Accrued but unused annual leave (paid out at the daily base rate) - Any approved outstanding expense claims submitted before departure Final pay is processed in the next regular payroll cycle following the last day. References People Operations provides standard employment verification references (dates of employment, job title) upon written request. Line managers may provide personal references in a personal capacity, clearly distinguished from official company references.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "14-offboarding",
+      "filePath": "hr-policies/14-offboarding.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Equipment Return",
+      "wordCount": 124
+    }
+  },
+  {
+    "id": "hr-policies/15-health-and-wellbeing/0",
+    "text": "Health and Wellbeing Policy Effective date: January 1, 2024 Owner: People Operations Commitment The company is committed to supporting the physical, mental, and financial wellbeing of all employees. Wellbeing is not a perk — it is a business priority. Health Insurance All full-time employees and their immediate dependants are enrolled in the company health insurance plan from their first day of employment. Plan details, including coverage levels, in-network providers, and how to make a claim, are available in the HR portal under Benefits. Part-time employees working 20 or more hours per week are eligible for the individual (non-dependant) plan. Mental Health Support - Employee Assistance Programme (EAP): All employees have access to the EAP, which provides free, confidential counselling (up to 8 sessions per issue per year), legal advice, and financial coaching. The EAP is available 24/7 and can be accessed directly — no referral or manager involvement needed. - Mental Health Days: Employees may take up to 2 mental health days per year from their sick leave balance without providing a medical certificate. - Manager training: All people managers receive mental health first-aid training within six months of taking on a management role. Wellbeing Allowance Each employee receives a $600 annual wellbeing allowance to spend on activities or services that support their physical or mental health, including: - Gym memberships or fitness classes - Meditation or mindfulness apps - Ergonomic home office equipment (if not already provided under the Remote Work Policy) - Nutrition or sleep coaching",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "15-health-and-wellbeing",
+      "filePath": "hr-policies/15-health-and-wellbeing.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Mental Health Support",
+      "wordCount": 248
+    }
+  },
+  {
+    "id": "hr-policies/15-health-and-wellbeing/1",
+    "text": "or services that support their physical or mental health, including: - Gym memberships or fitness classes - Meditation or mindfulness apps - Ergonomic home office equipment (if not already provided under the Remote Work Policy) - Nutrition or sleep coaching Claims are submitted via the HR portal with a receipt. The allowance is not transferable and does not roll over. Working Hours and Rest - Standard full-time hours are 40 hours per week. Consistent overwork is a management concern, not a badge of honour. - Employees are encouraged to take their full lunch break and to disconnect outside working hours. - Managers are expected to model healthy working habits and to address workload concerns raised by their team promptly. - Employees experiencing persistent workload issues should raise them with their manager, skip-level, or People Operations. Pregnancy and Fertility The company covers reasonable costs for fertility treatment not covered by the health insurance plan, up to $5,000 lifetime, through the EAP's specialist financial support service. Applications are made directly through the EAP and are completely confidential from the company. Review This policy is reviewed annually in January by People Operations in consultation with employee feedback collected during the prior year's engagement survey.",
+    "metadata": {
+      "domain": "hr-policies",
+      "filename": "15-health-and-wellbeing",
+      "filePath": "hr-policies/15-health-and-wellbeing.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Pregnancy and Fertility",
+      "wordCount": 201
+    }
+  },
+  {
+    "id": "it-support/01-password-reset/0",
+    "text": "Password Reset Guide Category: Account Access Last updated: January 2024 Owner: IT Helpdesk Self-Service Reset (Recommended) If you have previously registered your phone number or recovery email with the identity provider, you can reset your own password without contacting IT. 1. Go to account.company.com/reset 2. Enter your company email address and click Send code 3. Enter the 6-digit code sent to your registered mobile number or recovery email 4. Choose a new password that meets the requirements below 5. Click Save — your new password is active immediately If the code does not arrive within two minutes, check your spam folder or click Resend. Codes expire after 10 minutes. Password Requirements - Minimum 14 characters - At least one uppercase letter, one lowercase letter, and one number - Cannot match any of your last 10 passwords - Must not contain your name or email address - Special characters are encouraged but not required Helpdesk-Assisted Reset If you cannot complete a self-service reset (e.g., you have lost access to your registered phone and recovery email): 1. Submit a ticket at helpdesk.company.com or call the IT Helpdesk at ext. 4357 (HELP) 2. You will be asked to verify your identity with your employee ID and manager's name 3. A temporary password will be issued via your personal email on file with HR 4. You must change the temporary password on first login — it expires after 24 hours",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "01-password-reset",
+      "filePath": "it-support/01-password-reset.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Helpdesk-Assisted Reset",
+      "wordCount": 236
+    }
+  },
+  {
+    "id": "it-support/01-password-reset/1",
+    "text": "your identity with your employee ID and manager's name 3. A temporary password will be issued via your personal email on file with HR 4. You must change the temporary password on first login — it expires after 24 hours Multi-Factor Authentication (MFA) Reset If you have lost your MFA device: - Contact the IT Helpdesk directly — MFA resets cannot be done self-service - You will need manager approval for an MFA bypass during the reset window - IT will re-enrol your new device within one business hour during business hours (8 AM–6 PM) After a Reset - All active sessions are terminated when a password is changed - You will need to sign in again on all devices and applications - If you are locked out of a specific application after a reset, try signing out and back in before contacting IT",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "01-password-reset",
+      "filePath": "it-support/01-password-reset.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Helpdesk-Assisted Reset",
+      "wordCount": 144
+    }
+  },
+  {
+    "id": "it-support/02-vpn-access/0",
+    "text": "VPN Access Guide Category: Network Access Last updated: January 2024 Owner: IT Infrastructure What the VPN Is For The company VPN encrypts your internet traffic and routes it through the corporate network, giving you secure access to internal systems (code repositories, internal dashboards, on-premise databases) that are not reachable from the public internet. VPN use is mandatory when: - Accessing any internal system from outside the office - Working on any public or shared Wi-Fi network - Handling customer data or Confidential-classified company data remotely Getting Access VPN access is provisioned automatically for all employees on their first day. If you do not have the VPN client installed, submit a ticket at helpdesk.company.com with the subject \"VPN client install request\" and include your device model and operating system version. Installing the Client 1. Go to intranet.company.com/it/vpn 2. Download the installer for your OS (Windows, macOS, or Linux) 3. Run the installer — no admin password is required on company-managed devices 4. Sign in with your company email and password when prompted 5. Approve the MFA push notification on your registered device Connecting 1. Open the VPN client (look for the shield icon in your system tray or menu bar) 2. Select the Corporate – Standard profile 3. Click Connect 4. The status indicator will turn green when connected",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "02-vpn-access",
+      "filePath": "it-support/02-vpn-access.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Installing the Client",
+      "wordCount": 218
+    }
+  },
+  {
+    "id": "it-support/02-vpn-access/1",
+    "text": "your registered device Connecting 1. Open the VPN client (look for the shield icon in your system tray or menu bar) 2. Select the Corporate – Standard profile 3. Click Connect 4. The status indicator will turn green when connected For access to production infrastructure, select the Corporate – Production profile. This profile requires a separate approval — see \"Requesting Production Access\" below. Requesting Production Access Production VPN access is restricted to engineers with a business need. To request it: 1. Submit a ticket at helpdesk.company.com with subject \"Production VPN access request\" 2. Include your manager's name and a brief justification 3. Your manager will receive an approval email — access is granted within one business day of approval Troubleshooting Symptom Action --------- -------- Client fails to connect Check your internet connection, then restart the client MFA push not received Check the Authenticator app manually; use the one-time code if needed Connected but cannot reach internal site Check the site URL; try disconnecting and reconnecting \"Certificate error\" message Your client may be out of date — reinstall from the intranet link above If the issue persists, contact the IT Helpdesk at ext. 4357 with the client log file (Help → Export Logs in the client menu).",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "02-vpn-access",
+      "filePath": "it-support/02-vpn-access.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Troubleshooting",
+      "wordCount": 206
+    }
+  },
+  {
+    "id": "it-support/03-hardware-request/0",
+    "text": "Hardware Request Process Category: Equipment Last updated: January 2024 Owner: IT Helpdesk Standard Equipment All new employees receive a standard equipment package on their first day (or shipped ahead of time for remote employees). The standard package includes: - Laptop (MacBook Pro 14\" or Dell XPS 15, assigned based on role) - USB-C hub / docking station - Wired keyboard and mouse - Laptop bag or sleeve - Power adapter Monitors are provided for office-based employees. Remote employees may request a monitor under the Remote Work Policy's home office stipend. Requesting Additional or Replacement Equipment Replacement (Broken or Faulty Equipment) 1. Submit a ticket at helpdesk.company.com with category Hardware – Replacement 2. Describe the fault clearly (e.g., \"screen has horizontal lines\", \"keyboard keys unresponsive\") 3. IT will attempt remote diagnostics first; if the device needs to be replaced you will receive a loan unit within one business day 4. Faulty devices must be returned to IT within five business days of receiving the replacement Additional Peripherals Requests for additional peripherals (second monitor, standing desk adapter, ergonomic keyboard, headset, etc.) should be submitted with: - The specific item and reason - Manager approval (cc your manager on the ticket or note that you have their verbal approval)",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "03-hardware-request",
+      "filePath": "it-support/03-hardware-request.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Replacement (Broken or Faulty Equipment)",
+      "wordCount": 206
+    }
+  },
+  {
+    "id": "it-support/03-hardware-request/1",
+    "text": "Requests for additional peripherals (second monitor, standing desk adapter, ergonomic keyboard, headset, etc.) should be submitted with: - The specific item and reason - Manager approval (cc your manager on the ticket or note that you have their verbal approval) Standard peripherals (up to $150) are approved by IT directly. Items over $150 require Finance sign-off in addition to manager approval. Specialist Hardware (Developers, Designers) Engineers or designers needing higher-spec machines (e.g., additional RAM, GPU for local ML workloads) should submit a ticket with: - The technical requirement and justification - Manager approval - Department head approval for items over $2,000 Requests are reviewed within three business days. Upgrade Cycle Laptops are refreshed on a four-year cycle. Employees approaching the end of the cycle will be contacted by IT six weeks before their device reaches four years. Early upgrades are only approved for documented hardware failure. Lost or Stolen Equipment Report lost or stolen equipment immediately to: 1. IT Security — security@company.com (to trigger remote wipe) 2. Your manager 3. Facilities/Security if the theft occurred on-site Do not delay reporting — remote wipe must be triggered as quickly as possible. File a police report if the device was stolen outside the office; provide the report number to IT.",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "03-hardware-request",
+      "filePath": "it-support/03-hardware-request.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Lost or Stolen Equipment",
+      "wordCount": 208
+    }
+  },
+  {
+    "id": "it-support/04-ticket-escalation/0",
+    "text": "IT Ticket Escalation Process Category: Helpdesk Operations Last updated: January 2024 Owner: IT Helpdesk Manager Ticket Priority Levels Priority Definition First Response SLA Resolution SLA ---------- ----------- ------------------- ---------------- P1 – Critical Production system down; business-wide impact; data breach suspected 15 minutes 4 hours P2 – High Significant service degradation; one team or department blocked 1 hour 8 hours P3 – Medium Individual user impacted but has a workaround; non-urgent access requests 4 hours 2 business days P4 – Low General questions, how-to requests, minor cosmetic issues 8 hours 5 business days SLAs apply during business hours (8 AM – 6 PM, Monday to Friday). P1 and P2 tickets trigger on-call response outside business hours. How to Submit a Ticket - Portal: helpdesk.company.com (preferred — allows file attachments and status tracking) - Email: helpdesk@company.com (automatically creates a P3 ticket) - Phone: ext. 4357 — use for P1 and P2 issues only; phone creates a ticket automatically When submitting, include: - A clear description of the issue - Steps you have already tried - Any error messages (screenshots preferred) - Business impact (who is affected and how) Escalation Path Tier 1 — Helpdesk Analyst Handles password resets, account unlocks, standard software installs, general how-to questions, and routine hardware swaps. Resolves approximately 80% of tickets.",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "04-ticket-escalation",
+      "filePath": "it-support/04-ticket-escalation.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "How to Submit a Ticket",
+      "wordCount": 213
+    }
+  },
+  {
+    "id": "it-support/04-ticket-escalation/1",
+    "text": "Any error messages (screenshots preferred) - Business impact (who is affected and how) Escalation Path Tier 1 — Helpdesk Analyst Handles password resets, account unlocks, standard software installs, general how-to questions, and routine hardware swaps. Resolves approximately 80% of tickets. Tier 2 — Systems / Infrastructure Engineer Handles complex application issues, server-side problems, network configuration, and security incidents. Tier 1 escalates to Tier 2 when: - The issue cannot be resolved within the Tier 1 SLA - The issue requires elevated system access - The issue affects more than one user Tier 3 — Vendor / Specialist Engaged for issues requiring vendor support (e.g., SaaS platform bugs, hardware warranty claims) or specialist knowledge (e.g., cloud infrastructure, security forensics). Escalating a Ticket Yourself If you feel your ticket is not being resolved within the SLA: 1. Add a comment to the ticket noting the SLA breach 2. If no response within two hours, email the IT Helpdesk Manager at it-manager@company.com with the ticket number 3. For business-critical issues, call ext. 4357 and state that you are escalating Do not create duplicate tickets — it resets the SLA clock and slows resolution. P1 Incident Protocol For P1 incidents: 1. Call ext. 4357 immediately — do not email 2. A P1 bridge call is opened within 15 minutes with the on-call engineer and IT Manager 3. Status updates are posted to the #it-incidents Slack channel every 30 minutes 4. A post-incident review is completed within two business days of resolution",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "04-ticket-escalation",
+      "filePath": "it-support/04-ticket-escalation.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Escalating a Ticket Yourself",
+      "wordCount": 247
+    }
+  },
+  {
+    "id": "it-support/05-software-access-request/0",
+    "text": "Software and System Access Request Category: Access Management Last updated: January 2024 Owner: IT Helpdesk Standard Access (Provisioned Automatically) The following tools are provisioned for all employees on day one and require no request: - Company email (Google Workspace) - Slack - HR portal - Video conferencing (Zoom) - Document storage (Google Drive) - Password manager (1Password) - VPN client Requesting Additional Software or Access Step 1 — Check the Software Catalogue Before submitting a request, check the IT Software Catalogue at intranet.company.com/it/software to confirm the tool is already licensed. If it is listed, submit a ticket at helpdesk.company.com with: - Tool name - Your business justification - Manager approval (cc your manager or note verbal approval) Access to catalogued tools is granted within one business day. Step 2 — Requesting a New Tool Not in the Catalogue If the tool is not in the catalogue, IT and Finance must evaluate it before purchase. Submit a New Software Request ticket with: - Tool name and vendor website - Business use case and which team will use it - Estimated number of users and cost - Whether it will process any company, employee, or customer data (data processing tools require a security review)",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "05-software-access-request",
+      "filePath": "it-support/05-software-access-request.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Step 2 — Requesting a New Tool Not in the Catalogue",
+      "wordCount": 202
+    }
+  },
+  {
+    "id": "it-support/05-software-access-request/1",
+    "text": "Tool name and vendor website - Business use case and which team will use it - Estimated number of users and cost - Whether it will process any company, employee, or customer data (data processing tools require a security review) The evaluation process takes 5–10 business days. Security review (if required) may extend this to 20 business days. Step 3 — Elevated Permissions Requests for admin, root, or elevated access to existing systems require: - Documented justification - Manager approval - IT Security sign-off for any system storing Confidential data Elevated access is reviewed quarterly and revoked automatically if not renewed. Access Reviews IT conducts access reviews every six months. Managers receive a report of their team's system access and are required to confirm or revoke access within five business days. Access not confirmed will be revoked. Offboarding / Role Change When an employee leaves or changes role, their manager must submit an Access Change ticket on the employee's last day or the date of role change. IT revokes access within two hours of receiving the request during business hours. Do not share your login credentials with a colleague as a workaround for access issues — submit a ticket instead.",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "05-software-access-request",
+      "filePath": "it-support/05-software-access-request.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Offboarding / Role Change",
+      "wordCount": 200
+    }
+  },
+  {
+    "id": "it-support/06-mfa-setup/0",
+    "text": "Multi-Factor Authentication (MFA) Setup Guide Category: Account Security Last updated: January 2024 Owner: IT Security What Is MFA? Multi-factor authentication adds a second verification step when you sign in. Even if someone obtains your password, they cannot access your account without also having your second factor. MFA is mandatory for all company accounts. Supported MFA Methods Method Security level Recommended -------- --------------- ------------- Authenticator app (TOTP) High ✅ Yes Hardware security key (FIDO2/YubiKey) Very high ✅ Yes (engineers with production access) SMS one-time code Medium ⚠️ Fallback only Email one-time code Medium ⚠️ Fallback only SMS and email are available as fallback methods only. Do not use them as your primary MFA method if you can avoid it. Setting Up an Authenticator App 1. Install an authenticator app on your phone: - Recommended: Google Authenticator, Authy, or Microsoft Authenticator 2. Go to account.company.com/security 3. Under Two-factor authentication, click Add authenticator app 4. Open your authenticator app and tap the + or Scan QR code button 5. Scan the QR code displayed on screen 6. Enter the 6-digit code shown in the app to confirm setup 7. Save your backup codes in your password manager — these allow access if you lose your phone",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "06-mfa-setup",
+      "filePath": "it-support/06-mfa-setup.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Setting Up an Authenticator App",
+      "wordCount": 203
+    }
+  },
+  {
+    "id": "it-support/06-mfa-setup/1",
+    "text": "code button 5. Scan the QR code displayed on screen 6. Enter the 6-digit code shown in the app to confirm setup 7. Save your backup codes in your password manager — these allow access if you lose your phone Setting Up a Hardware Security Key 1. Submit a request at helpdesk.company.com with subject \"Hardware security key request\" — keys are provided free of charge to all engineers 2. When the key arrives, go to account.company.com/security 3. Under Security keys, click Add security key 4. Follow the browser prompts and insert your key when asked 5. Register a backup method (authenticator app) in case you lose the key Registering a Backup Method Always register at least two MFA methods. To add a backup: 1. Sign in at account.company.com/security 2. Under Two-factor authentication, click Add method 3. Follow the prompts for your chosen backup type Lost Phone or Device If you lose your primary MFA device: 1. Use a backup code (from your password manager) to sign in 2. Immediately go to account.company.com/security and remove the lost device 3. Set up MFA on your new device before removing the backup codes If you do not have backup codes, contact the IT Helpdesk at ext. 4357. Identity verification will be required before an MFA reset is performed.",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "06-mfa-setup",
+      "filePath": "it-support/06-mfa-setup.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Lost Phone or Device",
+      "wordCount": 215
+    }
+  },
+  {
+    "id": "it-support/07-new-employee-it-setup/0",
+    "text": "New Employee IT Setup Checklist Category: Onboarding Last updated: January 2024 Owner: IT Helpdesk Before You Start Your IT accounts and laptop will be ready on your first day. If anything is missing, contact the IT Helpdesk at helpdesk.company.com or call ext. 4357. Day 1 Checklist 1. Collect Your Equipment - Pick up your laptop from IT (office employees) or confirm your shipped equipment has arrived (remote employees) - Check the box contains: laptop, power adapter, USB-C hub, keyboard, mouse 2. Sign In to Your Laptop - Power on the laptop — it will be pre-enrolled in device management - Sign in with the temporary credentials emailed to your personal address by People Operations - You will be prompted to set a new password on first login (see Password Policy for requirements) 3. Set Up MFA - After setting your password, go to account.company.com/security - Enrol your primary MFA method (authenticator app recommended) - Enrol a backup method and save your backup codes in the password manager - See the MFA Setup Guide for full instructions 4. Install the VPN Client - Go to intranet.company.com/it/vpn and download the client for your OS - Sign in and verify you can connect before leaving the setup area - See the VPN Access Guide for full instructions",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "07-new-employee-it-setup",
+      "filePath": "it-support/07-new-employee-it-setup.md",
+      "chunkIndex": 0,
+      "totalChunks": 3,
+      "heading": "3. Set Up MFA",
+      "wordCount": 214
+    }
+  },
+  {
+    "id": "it-support/07-new-employee-it-setup/1",
+    "text": "full instructions 4. Install the VPN Client - Go to intranet.company.com/it/vpn and download the client for your OS - Sign in and verify you can connect before leaving the setup area - See the VPN Access Guide for full instructions 5. Access Core Applications All of the following should be available in your browser or app launcher. If any are missing, submit a ticket: Application Access method ------------- --------------- Email (Gmail) mail.google.com Calendar calendar.google.com Drive drive.google.com Slack Desktop app (download from intranet) Zoom Desktop app (pre-installed) HR portal hr.company.com Helpdesk helpdesk.company.com Password manager (1Password) Pre-installed; activate with your company email 6. Set Up Your Password Manager - Open 1Password and sign in with your company email - Import or create entries for any systems you access - Never save passwords in your browser — use 1Password only 7. Enable Disk Encryption - macOS: FileVault is enabled by default on company devices. Confirm it is on: System Settings → Privacy & Security → FileVault - Windows: BitLocker is enabled by default. Confirm: Settings → System → Storage → BitLocker If encryption is not enabled, contact IT immediately — do not use the device for work until this is resolved. Getting Help",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "07-new-employee-it-setup",
+      "filePath": "it-support/07-new-employee-it-setup.md",
+      "chunkIndex": 1,
+      "totalChunks": 3,
+      "heading": "7. Enable Disk Encryption",
+      "wordCount": 200
+    }
+  },
+  {
+    "id": "it-support/07-new-employee-it-setup/2",
+    "text": "Security → FileVault - Windows: BitLocker is enabled by default. Confirm: Settings → System → Storage → BitLocker If encryption is not enabled, contact IT immediately — do not use the device for work until this is resolved. Getting Help For any setup issues on day one, come to the IT helpdesk desk (Floor 2, near the lifts) or call ext. 4357. Remote employees should use the helpdesk chat widget at helpdesk.company.com.",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "07-new-employee-it-setup",
+      "filePath": "it-support/07-new-employee-it-setup.md",
+      "chunkIndex": 2,
+      "totalChunks": 3,
+      "heading": "7. Enable Disk Encryption",
+      "wordCount": 72
+    }
+  },
+  {
+    "id": "it-support/08-phishing-and-security-incidents/0",
+    "text": "Phishing and Security Incident Reporting Category: Security Last updated: January 2024 Owner: IT Security Recognising a Phishing Attempt Phishing emails try to trick you into clicking a malicious link, downloading malware, or handing over credentials. Common warning signs: - Sender address does not match the claimed organisation (e.g., support@c0mpany.com) - Unexpected urgency (\"Your account will be deleted in 24 hours\") - Generic greetings (\"Dear user\") rather than your name - Links that show a different URL when hovered over - Attachments you were not expecting, especially .zip, .exe, or macro-enabled Office files - Requests for passwords, MFA codes, or financial transfers — legitimate internal teams will never ask for these by email What to Do If You Receive a Suspicious Email Do not click any links, download attachments, or reply to the sender. 1. Click the Report Phishing button in Gmail (the shield icon in the email toolbar) 2. Forward the email as an attachment to security@company.com 3. Delete the email from your inbox Reporting takes less than 30 seconds and helps IT block the threat for everyone. What to Do If You Clicked a Link or Entered Credentials Act immediately — speed matters: 1. Do not close the browser or shut down the computer 2. Disconnect from Wi-Fi (do not use the VPN disconnect — physically turn off Wi-Fi or unplug ethernet) 3. Call the IT Security line immediately: ext. 4358 (available 24/7 for incidents) 4. Do not attempt to fix it yourself — preserving evidence is critical",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "08-phishing-and-security-incidents",
+      "filePath": "it-support/08-phishing-and-security-incidents.md",
+      "chunkIndex": 0,
+      "totalChunks": 3,
+      "heading": "What to Do If You Clicked a Link or Entered Credentials",
+      "wordCount": 249
+    }
+  },
+  {
+    "id": "it-support/08-phishing-and-security-incidents/1",
+    "text": "(do not use the VPN disconnect — physically turn off Wi-Fi or unplug ethernet) 3. Call the IT Security line immediately: ext. 4358 (available 24/7 for incidents) 4. Do not attempt to fix it yourself — preserving evidence is critical IT Security will guide you through the next steps, which may include a password reset, MFA re-enrolment, and device scan. Other Security Incidents to Report Report any of the following immediately to security@company.com or ext. 4358: - Lost or stolen device (see also: Hardware Request Policy) - Suspected unauthorised access to your account (unexpected sign-in alerts, unknown sent emails) - Accidental sharing of confidential data to the wrong person or system - Ransomware or unusual file encryption on your machine - Suspicious USB devices found in the office Reporting Timeline Incident type Report within --------------- -------------- Phishing click / credential entry Immediately (call ext. 4358) Lost/stolen device 1 hour Accidental data disclosure 2 hours Suspicious email (no click) Same business day Under GDPR and applicable data protection laws, the company must report certain data breaches to the regulator within 72 hours of becoming aware. Employee delays in reporting are the most common reason this deadline is missed. Report first, investigate later.",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "08-phishing-and-security-incidents",
+      "filePath": "it-support/08-phishing-and-security-incidents.md",
+      "chunkIndex": 1,
+      "totalChunks": 3,
+      "heading": "Reporting Timeline",
+      "wordCount": 201
+    }
+  },
+  {
+    "id": "it-support/08-phishing-and-security-incidents/2",
+    "text": "Under GDPR and applicable data protection laws, the company must report certain data breaches to the regulator within 72 hours of becoming aware. Employee delays in reporting are the most common reason this deadline is missed. Report first, investigate later. No-Blame Culture IT Security operates a no-blame reporting culture. The goal is rapid containment, not punishment. Employees who report incidents promptly — even if they caused them — are treated with discretion. What is not acceptable is knowingly delaying or concealing an incident.",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "08-phishing-and-security-incidents",
+      "filePath": "it-support/08-phishing-and-security-incidents.md",
+      "chunkIndex": 2,
+      "totalChunks": 3,
+      "heading": "Reporting Timeline",
+      "wordCount": 83
+    }
+  },
+  {
+    "id": "it-support/09-printer-and-peripherals/0",
+    "text": "Printer and Peripheral Setup Guide Category: Office Equipment Last updated: January 2024 Owner: IT Helpdesk Office Printers Finding a Printer All office printers are listed at intranet.company.com/it/printers with floor maps. Printers are labelled with their network name (e.g., PRN-F2-NW for Floor 2, North Wing). Adding a Printer (macOS) 1. Open System Settings → Printers & Scanners 2. Click + to add a printer 3. Select the IP tab 4. Enter the printer's IP address (listed on the printer label and the intranet page) 5. Protocol: AirPrint or IPP 6. Click Add — the driver installs automatically Adding a Printer (Windows) 1. Open Settings → Bluetooth & devices → Printers & scanners 2. Click Add device and wait for the printer to appear, or click Add manually 3. Select Add a printer using an IP address or hostname 4. Enter the printer's IP address and follow the prompts If the printer does not appear or produces errors, submit a ticket at helpdesk.company.com. Printing Securely Confidential documents should use Secure Print: - In the print dialog, select Secure Print and set a PIN - Walk to the printer, tap your access card or enter the PIN to release the job - Uncollected secure print jobs are deleted after 2 hours",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "09-printer-and-peripherals",
+      "filePath": "it-support/09-printer-and-peripherals.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Adding a Printer (Windows)",
+      "wordCount": 208
+    }
+  },
+  {
+    "id": "it-support/09-printer-and-peripherals/1",
+    "text": "Print: - In the print dialog, select Secure Print and set a PIN - Walk to the printer, tap your access card or enter the PIN to release the job - Uncollected secure print jobs are deleted after 2 hours Do not leave printed documents containing sensitive information unattended at the printer. Monitors Office-based employees are allocated one external monitor. A second monitor requires manager approval and is subject to availability. To request a monitor, submit a ticket with: - Your desk location - Monitor size preference (24\" or 27\" are standard) IT will arrange delivery and setup within two business days. Webcams and Headsets A webcam and headset are available on request for any employee. Submit a ticket at helpdesk.company.com with category Peripherals – Audio/Video. Standard models are dispatched within one business day. If you need a specialist headset (noise-cancelling, wireless, or conference-room grade), include the specification and manager approval. Docking Stations Docking stations for office desks can be requested via a helpdesk ticket. IT will configure and test the dock before deployment to ensure compatibility with your laptop model. Returning Peripherals When leaving the company or vacating a desk, return all company peripherals to IT (Floor 2 equipment room). Do not leave equipment at the desk for the next person — unclaimed equipment is not reliably returned to IT inventory.",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "09-printer-and-peripherals",
+      "filePath": "it-support/09-printer-and-peripherals.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Docking Stations",
+      "wordCount": 222
+    }
+  },
+  {
+    "id": "it-support/10-account-lockout/0",
+    "text": "Account Lockout Troubleshooting Category: Account Access Last updated: January 2024 Owner: IT Helpdesk Why Accounts Get Locked Accounts are automatically locked after 5 consecutive failed sign-in attempts. This is a security control — it prevents brute-force attacks. The lockout applies to: - Your main company account (email, Slack, Google Workspace) - VPN - Any application using single sign-on (SSO) Unlocking Your Account Self-Service Unlock If your account is locked and you remember your password: 1. Go to account.company.com/unlock 2. Enter your email address and complete MFA verification 3. Your account will be unlocked immediately Helpdesk Unlock If self-service is not available (e.g., you also do not have MFA access): 1. Call the IT Helpdesk at ext. 4357 or submit a ticket at helpdesk.company.com 2. Provide your employee ID and answer the identity verification questions 3. IT will unlock the account within 15 minutes during business hours Common Causes and Fixes Cause Fix ------- ----- Caps Lock was on Turn off Caps Lock and try again with your correct password Saved password in browser is outdated Clear the saved password, then type it manually Mobile device reconnecting with old password Update the password on your phone's mail/calendar app after a reset Shared machine still using old credentials Sign out of all sessions via account.company.com/sessions",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "10-account-lockout",
+      "filePath": "it-support/10-account-lockout.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Helpdesk Unlock",
+      "wordCount": 213
+    }
+  },
+  {
+    "id": "it-support/10-account-lockout/1",
+    "text": "is outdated Clear the saved password, then type it manually Mobile device reconnecting with old password Update the password on your phone's mail/calendar app after a reset Shared machine still using old credentials Sign out of all sessions via account.company.com/sessions After changing your password, make sure to update it in: - Your phone (mail, calendar, Slack) - Any automation scripts or tools that use your credentials (replace with a service account instead — see Software Access Request guide) Repeated Lockouts If your account locks repeatedly without you causing it, someone may be attempting to access your account. Report this to IT Security immediately at security@company.com or ext. 4358. Change your password and review active sessions at account.company.com/sessions. Service Account Lockouts Service accounts used in scripts or integrations should not use personal credentials. If a service account is locked: 1. Submit a P2 ticket immediately if it is causing a service disruption 2. Include the service account name and which systems are affected 3. IT will unlock and investigate the cause (usually an outdated secret in a deployment config) Service accounts should use long randomly generated passwords stored in the company secrets manager, rotated at least every 90 days.",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "10-account-lockout",
+      "filePath": "it-support/10-account-lockout.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Helpdesk Unlock",
+      "wordCount": 198
+    }
+  },
+  {
+    "id": "it-support/11-video-conferencing/0",
+    "text": "Video Conferencing Guide Category: Collaboration Tools Last updated: January 2024 Owner: IT Helpdesk Supported Platforms The company standard video conferencing tool is Zoom. Google Meet is available as a secondary option for quick calls where all participants have Google Workspace accounts. Do not use personal Zoom accounts for business meetings. Getting Started with Zoom Zoom is pre-installed on all company laptops. To activate: 1. Open Zoom and click Sign In with SSO 2. Enter the company domain: company.zoom.us 3. Sign in with your company email — no separate Zoom password is needed Your account is automatically provisioned with a Pro licence on day one. Scheduling a Meeting - From Zoom desktop: click New Meeting (instant) or Schedule (future) - From Google Calendar: click Add video conferencing → Zoom when creating an event - All meetings should use Unique meeting IDs — avoid using your Personal Meeting ID for recurring calls with external guests Meeting Security - Enable the Waiting Room for any meeting with external participants - Set a passcode for sensitive meetings (board calls, customer negotiations, disciplinary proceedings) - Do not share meeting links publicly — send directly to invitees - Lock the meeting once all expected participants have joined (Security → Lock Meeting)",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "11-video-conferencing",
+      "filePath": "it-support/11-video-conferencing.md",
+      "chunkIndex": 0,
+      "totalChunks": 3,
+      "heading": "Scheduling a Meeting",
+      "wordCount": 205
+    }
+  },
+  {
+    "id": "it-support/11-video-conferencing/1",
+    "text": "participants - Set a passcode for sensitive meetings (board calls, customer negotiations, disciplinary proceedings) - Do not share meeting links publicly — send directly to invitees - Lock the meeting once all expected participants have joined (Security → Lock Meeting) In-Office Meeting Rooms All meeting rooms are bookable via Google Calendar. To connect a room display to Zoom: 1. Book the room in Google Calendar and add a Zoom link 2. In the room, tap Join on the room display and enter the meeting ID or passcode 3. Use the room's built-in camera and microphone — do not use your laptop audio at the same time (causes echo) If the room display is unresponsive, restart it using the power button at the back of the panel, or submit a ticket. Troubleshooting Audio/Video Issue Fix ------- ----- Others cannot hear you Check Zoom settings: Audio → ensure correct microphone is selected Echo on the call One participant likely has audio on twice — mute laptop speakers Video is frozen or pixelated Check internet speed; switch to cable if on Wi-Fi; lower video quality in settings \"You are muted\" — cannot unmute The host has muted you; use the chat to notify them Zoom won't open Force quit and reopen; if persistent, reinstall from intranet.company.com/it/software",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "11-video-conferencing",
+      "filePath": "it-support/11-video-conferencing.md",
+      "chunkIndex": 1,
+      "totalChunks": 3,
+      "heading": "In-Office Meeting Rooms",
+      "wordCount": 213
+    }
+  },
+  {
+    "id": "it-support/11-video-conferencing/2",
+    "text": "switch to cable if on Wi-Fi; lower video quality in settings \"You are muted\" — cannot unmute The host has muted you; use the chat to notify them Zoom won't open Force quit and reopen; if persistent, reinstall from intranet.company.com/it/software Recording Meetings Meetings may be recorded for legitimate business purposes (training, note-taking for absentees). Before recording: - Inform all participants and get verbal consent - Do not record meetings with external participants without their explicit consent - Recordings are stored in the company Zoom cloud account for 90 days, then deleted unless saved to Drive - Recordings containing confidential information must not be shared outside the intended audience",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "11-video-conferencing",
+      "filePath": "it-support/11-video-conferencing.md",
+      "chunkIndex": 2,
+      "totalChunks": 3,
+      "heading": "In-Office Meeting Rooms",
+      "wordCount": 108
+    }
+  },
+  {
+    "id": "it-support/12-data-backup-and-recovery/0",
+    "text": "Data Backup and Recovery Guide Category: Data Management Last updated: January 2024 Owner: IT Infrastructure What Is Backed Up Automatically The following systems have automated backups managed by IT. You do not need to do anything for these: System Backup frequency Retention -------- ----------------- ----------- Google Drive (company files) Continuous (Google Vault) 5 years Email (Gmail) Continuous (Google Vault) 5 years Production databases Every 6 hours 30 days Code repositories (GitHub) Daily snapshot 90 days HR portal data Nightly 1 year What Is NOT Automatically Backed Up - Local files on your laptop — anything saved to your Desktop, Documents, or Downloads folder that is not synced to Google Drive - Browser bookmarks (use Chrome's profile sync or export manually) - Local application data (IDE settings, terminal configs) — use dotfiles repos or tool-specific sync features Store all work files in Google Drive, not your local hard drive. If your laptop is lost, stolen, or fails, local-only files cannot be recovered. Syncing to Google Drive 1. Install the Google Drive desktop app (pre-installed on company laptops; reinstall from intranet if missing) 2. Sign in with your company account 3. In the app settings, add your local Documents folder as a mirrored folder 4. Files in mirrored folders are available both locally and in Drive and are backed up continuously",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "12-data-backup-and-recovery",
+      "filePath": "it-support/12-data-backup-and-recovery.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "What Is NOT Automatically Backed Up",
+      "wordCount": 219
+    }
+  },
+  {
+    "id": "it-support/12-data-backup-and-recovery/1",
+    "text": "if missing) 2. Sign in with your company account 3. In the app settings, add your local Documents folder as a mirrored folder 4. Files in mirrored folders are available both locally and in Drive and are backed up continuously Recovering a Deleted or Overwritten File From Google Drive 1. Go to drive.google.com 2. Right-click the file or folder → View versions (for overwritten files) or go to Trash (for deleted files) 3. Files remain in Trash for 30 days; versions are kept for 180 days 4. Click Restore to recover From Gmail 1. Go to mail.google.com → Trash 2. Deleted emails are retained for 30 days 3. For emails deleted more than 30 days ago, submit a Google Vault recovery request via helpdesk.company.com Requesting IT-Assisted Recovery For files deleted more than 30 days ago, database data, or large-scale recovery needs: 1. Submit a ticket at helpdesk.company.com with category Data Recovery 2. Include: what was lost, approximate date of loss, business impact 3. IT will assess feasibility against available backups — recovery is not guaranteed for all scenarios 4. Recovery requests are prioritised by business impact; allow 1–5 business days Laptop Failure Recovery If your laptop fails unexpectedly: 1. IT will provide a replacement or loan device (see Hardware Request guide) 2. Sign in to the new device with your company account — Drive, email, and browser profile restore automatically 3. Reinstall specialist applications from the Software Catalogue at intranet.company.com/it/software 4. Local-only files (if any) may require disk extraction by IT — not always possible if the drive has failed",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "12-data-backup-and-recovery",
+      "filePath": "it-support/12-data-backup-and-recovery.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Requesting IT-Assisted Recovery",
+      "wordCount": 260
+    }
+  },
+  {
+    "id": "it-support/13-remote-desktop-and-screen-sharing/0",
+    "text": "Remote Desktop and Screen Sharing Guide Category: Remote Access Last updated: January 2024 Owner: IT Helpdesk Use Cases Scenario Recommended tool ---------- ----------------- IT support agent helping you remotely Company Remote Support Tool (see below) Sharing your screen in a meeting Zoom screen share Accessing your office desktop from home Chrome Remote Desktop (approved use only) Accessing a server or VM SSH / RDP via VPN (engineers only) IT Remote Support Sessions When you have a helpdesk ticket open and the technician needs to see your screen, they will initiate a remote support session: 1. The technician will send you a session link via the helpdesk ticket or Slack 2. Click the link — it will open the company-approved remote support tool 3. You will see a prompt asking you to grant screen-sharing and control permission 4. Verify the technician's name matches the person who raised your ticket before accepting 5. You can see everything the technician does on your screen at all times 6. Click End Session at any time to disconnect Never accept remote access requests from unknown senders or unsolicited phone calls. Legitimate IT staff will only initiate sessions through the helpdesk ticket system. Chrome Remote Desktop (Personal Use)",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "13-remote-desktop-and-screen-sharing",
+      "filePath": "it-support/13-remote-desktop-and-screen-sharing.md",
+      "chunkIndex": 0,
+      "totalChunks": 3,
+      "heading": "IT Remote Support Sessions",
+      "wordCount": 202
+    }
+  },
+  {
+    "id": "it-support/13-remote-desktop-and-screen-sharing/1",
+    "text": "all times 6. Click End Session at any time to disconnect Never accept remote access requests from unknown senders or unsolicited phone calls. Legitimate IT staff will only initiate sessions through the helpdesk ticket system. Chrome Remote Desktop (Personal Use) Chrome Remote Desktop allows you to access your work laptop from another device when you are away from the office. It is approved for use by employees who need access to applications only available on their work machine. Setup (on your work laptop) 1. Go to remotedesktop.google.com/access 2. Click Set up remote access 3. Download and install the Chrome Remote Desktop Host 4. Set a PIN of at least 6 digits — use a strong PIN, not something obvious 5. The device will appear in your remote desktop list when the laptop is on and connected to the internet Connecting remotely 1. From another device, go to remotedesktop.google.com/access 2. Sign in with your company Google account 3. Select your work laptop and enter the PIN Security requirements: - Your work laptop must be encrypted and have its screen locked - Do not leave an active remote session unattended - Disconnect the session when you are finished, do not just close the browser tab",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "13-remote-desktop-and-screen-sharing",
+      "filePath": "it-support/13-remote-desktop-and-screen-sharing.md",
+      "chunkIndex": 1,
+      "totalChunks": 3,
+      "heading": "Connecting remotely",
+      "wordCount": 203
+    }
+  },
+  {
+    "id": "it-support/13-remote-desktop-and-screen-sharing/2",
+    "text": "the PIN Security requirements: - Your work laptop must be encrypted and have its screen locked - Do not leave an active remote session unattended - Disconnect the session when you are finished, do not just close the browser tab RDP / SSH Access for Engineers Engineers needing RDP or SSH access to company servers must: 1. Be connected to the VPN (Corporate – Production profile for production servers) 2. Use SSH key authentication — password-based SSH is disabled on all company servers 3. SSH keys must be rotated at least annually and stored in the company secrets manager RDP is available for Windows servers where SSH is not applicable. Contact IT Security for RDP credentials — they are not distributed by default.",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "13-remote-desktop-and-screen-sharing",
+      "filePath": "it-support/13-remote-desktop-and-screen-sharing.md",
+      "chunkIndex": 2,
+      "totalChunks": 3,
+      "heading": "Connecting remotely",
+      "wordCount": 123
+    }
+  },
+  {
+    "id": "it-support/14-wi-fi-and-network-access/0",
+    "text": "Wi-Fi and Network Access Guide Category: Network Last updated: January 2024 Owner: IT Infrastructure Office Wi-Fi Networks Network name Who it's for Access -------------- ------------- -------- CorpNet All employees Sign in with your company account (SSO) CorpNet-Guest Visitors and contractors Ask reception for the daily guest code CorpNet-IOT Smart office devices (printers, displays) Managed by IT — employees do not connect to this Do not share the CorpNet credentials or SSO session with guests. Use the Guest network for visitors. Connecting to CorpNet 1. Select CorpNet from your Wi-Fi menu 2. When prompted, enter your company email and password 3. Approve the MFA push notification 4. Your device is registered automatically — you will not need to sign in again on the same device If you are prompted to accept a security certificate, verify the issuer reads corp-cert.company.com before accepting. Contact IT if you are unsure. Wired Network (Ethernet) Ethernet ports are available at all desks and meeting rooms. Plug in your USB-C adapter — no authentication is required on managed devices. If you get a \"limited connectivity\" message on an unmanaged device, submit a ticket for a port to be enabled. Guest Wi-Fi The Guest network is isolated from the corporate network and provides internet access only. Guests should be escorted by an employee who is responsible for their access. Guest codes rotate daily — collect a fresh code from reception each morning.",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "14-wi-fi-and-network-access",
+      "filePath": "it-support/14-wi-fi-and-network-access.md",
+      "chunkIndex": 0,
+      "totalChunks": 3,
+      "heading": "Wired Network (Ethernet)",
+      "wordCount": 234
+    }
+  },
+  {
+    "id": "it-support/14-wi-fi-and-network-access/1",
+    "text": "The Guest network is isolated from the corporate network and provides internet access only. Guests should be escorted by an employee who is responsible for their access. Guest codes rotate daily — collect a fresh code from reception each morning. Working from a Coffee Shop or Public Wi-Fi Public Wi-Fi is untrusted. You must connect to the company VPN before accessing any work systems. See the VPN Access Guide for setup instructions. If you cannot connect to the VPN, do not access work email, code, or any company data until you have a trusted connection. Network Drives (Shared File Storage) Shared network drives are available for teams that need a shared file space outside Google Drive (e.g., large media files, legacy file shares): - Map a drive: Connect via VPN, then map `\\\\fileserver.company.internal\\<team-share>` - On macOS: Finder → Go → Connect to Server → `smb://fileserver.company.internal/<team-share>` - Credentials: your standard company account Access to specific shares is provisioned on request — submit a ticket with your manager's approval. Network Troubleshooting Issue Steps ------- ------- Cannot connect to CorpNet Forget the network and reconnect; clear MFA cache if SSO loop occurs Connected to Wi-Fi but no internet Check if VPN is interfering; disconnect VPN, test, reconnect Very slow speeds Try wired connection; report to IT if persistent (floor and desk number helps) Cannot reach internal sites from home Ensure VPN is connected; try reconnecting the VPN",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "14-wi-fi-and-network-access",
+      "filePath": "it-support/14-wi-fi-and-network-access.md",
+      "chunkIndex": 1,
+      "totalChunks": 3,
+      "heading": "Network Drives (Shared File Storage)",
+      "wordCount": 234
+    }
+  },
+  {
+    "id": "it-support/14-wi-fi-and-network-access/2",
+    "text": "internet Check if VPN is interfering; disconnect VPN, test, reconnect Very slow speeds Try wired connection; report to IT if persistent (floor and desk number helps) Cannot reach internal sites from home Ensure VPN is connected; try reconnecting the VPN For persistent issues, run a speed test (speedtest.net) and include the results in your helpdesk ticket.",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "14-wi-fi-and-network-access",
+      "filePath": "it-support/14-wi-fi-and-network-access.md",
+      "chunkIndex": 2,
+      "totalChunks": 3,
+      "heading": "Network Drives (Shared File Storage)",
+      "wordCount": 56
+    }
+  },
+  {
+    "id": "it-support/15-software-updates-and-patching/0",
+    "text": "Software Updates and Patching Policy Category: Security & Maintenance Last updated: January 2024 Owner: IT Security Why Updates Matter Software updates fix security vulnerabilities. Unpatched devices are one of the most common entry points for attackers. This is not optional maintenance — it is a security requirement. OS and System Updates Company laptops are managed via an MDM (Mobile Device Management) platform that pushes OS updates automatically. Timeline: - Critical security patches — deployed within 72 hours of release. A system notification will prompt you to restart. Do not postpone more than once. - Standard OS updates — deployed within 14 days. You will receive a notification with a scheduled maintenance window. - Major OS upgrades — tested by IT before rollout; deployed within 30 days of IT sign-off. You will receive at least one week's notice. If you dismiss a critical patch notification, IT will enforce the restart after 24 hours to protect the company network. Application Updates Managed Applications Applications distributed through the company's software management tool (Jamf for macOS, Intune for Windows) are updated automatically in the background. No action is required from you. Self-Installed Applications If you have installed approved software yourself (e.g., from the Software Catalogue): - Keep auto-update enabled where available - Check for updates manually at least once a week for high-risk tools (browsers, code editors, Docker) - Report outdated software you cannot update yourself to the IT Helpdesk",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "15-software-updates-and-patching",
+      "filePath": "it-support/15-software-updates-and-patching.md",
+      "chunkIndex": 0,
+      "totalChunks": 2,
+      "heading": "Managed Applications",
+      "wordCount": 236
+    }
+  },
+  {
+    "id": "it-support/15-software-updates-and-patching/1",
+    "text": "(e.g., from the Software Catalogue): - Keep auto-update enabled where available - Check for updates manually at least once a week for high-risk tools (browsers, code editors, Docker) - Report outdated software you cannot update yourself to the IT Helpdesk Browser Updates Company-managed Chrome updates automatically. If you see a Relaunch to update prompt in the top-right corner of Chrome, relaunch the browser as soon as practical — do not leave it pending for more than 24 hours. Checking Your Patch Status You can check whether your device is compliant at compliance.company.com/my-device. A green status means your device is up to date. A red status means action is required — follow the instructions on the page or contact IT. IT runs a compliance report weekly. Devices that are non-compliant for more than five days will be contacted directly; devices non-compliant for more than 10 days may have network access restricted until patched. Requesting a Patch Deferral If an update is incompatible with a critical tool you need for work, submit a ticket with: - The update version and the affected application - Business justification for deferral - A proposed alternative timeline Deferrals are only granted for documented compatibility issues and are time-limited (maximum 30 days). Security patches cannot be deferred.",
+    "metadata": {
+      "domain": "it-support",
+      "filename": "15-software-updates-and-patching",
+      "filePath": "it-support/15-software-updates-and-patching.md",
+      "chunkIndex": 1,
+      "totalChunks": 2,
+      "heading": "Requesting a Patch Deferral",
+      "wordCount": 210
+    }
+  }
+]
