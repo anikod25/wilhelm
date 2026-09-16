@@ -7,7 +7,9 @@
     "start": "node src/index.js",
     "chunk": "node src/scripts/chunk-documents.js",
     "ingest": "node src/scripts/ingest.js",
-    "ingest:dry-run": "node src/scripts/ingest.js --dry-run"
+    "ingest:dry-run": "node src/scripts/ingest.js --dry-run",
+    "test:router": "node src/scripts/test-router.js",
+    "test:router:verbose": "node src/scripts/test-router.js --verbose"
   },
   "dependencies": {
     "@google/genai": "^2.22.0",
