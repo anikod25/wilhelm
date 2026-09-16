@@ -94,14 +94,19 @@ function formatChunk(chunk, index, maxChunkWords) {
  *   instruction-following pressure occasionally ignore a single mention.
  * - The exact fallback phrase is quoted in the instruction so the model
  *   reproduces it faithfully enough for our detector to catch.
+ * - When conversationHistory is provided it is injected between the CONTEXT
+ *   block and the current QUESTION so the model can resolve pronouns and
+ *   follow-up references (e.g. "give me that as JSON", "and what about sick
+ *   leave?") without re-retrieving prior answers.
  *
  * @param {string} query
  * @param {import('./retriever.js').RetrievalResult[]} chunks
  * @param {number} maxContextWords
  * @param {number} maxChunkWords
+ * @param {string} [conversationHistory]  — pre-formatted prior turns from session.getContext()
  * @returns {{ prompt: string, contextWords: number }}
  */
-function buildPrompt(query, chunks, maxContextWords, maxChunkWords) {
+function buildPrompt(query, chunks, maxContextWords, maxChunkWords, conversationHistory = '') {
   // Build context blocks, respecting the total word budget
   const blocks = []
   let wordCount = 0
@@ -118,6 +123,14 @@ function buildPrompt(query, chunks, maxContextWords, maxChunkWords) {
 
   const context = blocks.join('\n\n')
 
+  // History section — only rendered when there are prior turns
+  const historySection = conversationHistory.trim()
+    ? `CONVERSATION HISTORY (for context only — do NOT treat prior answers as new facts):
+${conversationHistory}
+
+`
+    : ''
+
   const prompt = `You are a helpful internal knowledge-base assistant for a company.
 Your role is to answer employee questions about HR policies and IT support.
 
@@ -131,11 +144,13 @@ STRICT RULES — you must follow these without exception:
    when referencing specific facts.
 5. Do not invent policies, numbers, dates, or procedures not present in the context.
 6. Do not speculate or say "it depends" unless the context explicitly states conditions.
+7. You may use the CONVERSATION HISTORY to understand what "it", "that", or
+   "the previous answer" refers to, but never cite history as a source.
 
 CONTEXT:
 ${context}
 
-QUESTION (answer using ONLY the context above):
+${historySection}QUESTION (answer using ONLY the context above):
 ${query}
 
 ANSWER:`
@@ -228,6 +243,9 @@ function isUngrounded(answer) {
  * @param {number}  [options.maxTokens=512]           - Max tokens in the LLM response
  * @param {number}  [options.maxContextWords=1500]    - Total context word budget
  * @param {number}  [options.maxChunkWords=300]       - Per-chunk word cap
+ * @param {string}  [options.history='']              - Pre-formatted prior turns from
+ *                                                      session.getContext(); injected
+ *                                                      between CONTEXT and QUESTION
  * @returns {Promise<AnswerResult>}
  *
  * @example
@@ -248,6 +266,7 @@ export async function generateAnswer(query, chunks, options = {}) {
     maxTokens        = DEFAULT_MAX_TOKENS,
     maxContextWords  = MAX_CONTEXT_WORDS,
     maxChunkWords    = MAX_CHUNK_WORDS,
+    history          = '',   // pre-formatted prior turns from session.getContext()
   } = options
 
   // ── Fast path: no context ─────────────────────────────────────────────────
@@ -268,6 +287,7 @@ export async function generateAnswer(query, chunks, options = {}) {
     chunks,
     maxContextWords,
     maxChunkWords,
+    history,
   )
 
   // ── Generate ──────────────────────────────────────────────────────────────
