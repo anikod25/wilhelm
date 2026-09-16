@@ -78,6 +78,28 @@
   flex-direction: column;
 }
 
+/* ── Error banner ── */
+.errorBanner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #fef2f2;
+  border-top: 1px solid #fecaca;
+  flex-shrink: 0;
+}
+
+.errorIcon {
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.errorText {
+  font-size: 0.8125rem;
+  color: #b91c1c;
+  line-height: 1.4;
+}
+
 /* ── Footer ── */
 .footer {
   flex-shrink: 0;

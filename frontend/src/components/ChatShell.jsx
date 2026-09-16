@@ -10,17 +10,20 @@ import styles from './ChatShell.module.css'
  * ├────────────────────────────────┤
  * │  MessageList (scrollable, flex)│
  * ├────────────────────────────────┤
+ * │  Error banner (when error≠null)│
+ * ├────────────────────────────────┤
  * │  ChatInput                     │
  * └────────────────────────────────┘
  *
  * @param {{
- *   messages:      import('../data/dummyMessages.js').Message[],
- *   isLoading:     boolean,
- *   onSend:        (text: string) => void,
- *   onClear:       () => void,
+ *   messages:  import('../data/dummyMessages.js').Message[],
+ *   isLoading: boolean,
+ *   error:     string | null,
+ *   onSend:    (text: string) => void,
+ *   onClear:   () => void,
  * }} props
  */
-export default function ChatShell({ messages, isLoading, onSend, onClear }) {
+export default function ChatShell({ messages, isLoading, error, onSend, onClear }) {
   return (
     <div className={styles.shell}>
       {/* Header */}
@@ -45,6 +48,14 @@ export default function ChatShell({ messages, isLoading, onSend, onClear }) {
       <main className={styles.main}>
         <MessageList messages={messages} isLoading={isLoading} />
       </main>
+
+      {/* Error banner */}
+      {error && (
+        <div className={styles.errorBanner} role="alert">
+          <span className={styles.errorIcon} aria-hidden="true">⚠️</span>
+          <span className={styles.errorText}>{error}</span>
+        </div>
+      )}
 
       {/* Input bar */}
       <footer className={styles.footer}>
