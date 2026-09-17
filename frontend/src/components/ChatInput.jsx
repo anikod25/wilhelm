@@ -11,7 +11,7 @@ const FORMAT_OPTIONS = [
 ]
 
 /**
- * Message input bar: format selector + auto-growing textarea + Send button.
+ * Message input bar: segmented format selector + textarea + send button.
  *
  * @param {{
  *   onSend:    (text: string, format: string) => void,
@@ -48,21 +48,23 @@ export default function ChatInput({ onSend, isLoading, disabled = false }) {
   return (
     <div className={styles.wrapper}>
 
-      {/* Format selector */}
+      {/* Segmented format selector */}
       <div className={styles.formatBar} role="group" aria-label="Response format">
         <span className={styles.formatLabel}>Format</span>
-        {FORMAT_OPTIONS.map(({ value, label }) => (
-          <button
-            key={value}
-            type="button"
-            className={`${styles.formatBtn} ${format === value ? styles.formatBtnActive : ''}`}
-            onClick={() => setFormat(value)}
-            aria-pressed={format === value}
-            disabled={disabled}
-          >
-            {label}
-          </button>
-        ))}
+        <div className={styles.segmented}>
+          {FORMAT_OPTIONS.map(({ value, label }) => (
+            <button
+              key={value}
+              type="button"
+              className={`${styles.segBtn} ${format === value ? styles.segBtnActive : ''}`}
+              onClick={() => setFormat(value)}
+              aria-pressed={format === value}
+              disabled={disabled}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Input row */}
@@ -95,7 +97,7 @@ export default function ChatInput({ onSend, isLoading, disabled = false }) {
             <span className={styles.spinner} aria-hidden="true" />
           ) : (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-              width="17" height="17" aria-hidden="true">
+              width="16" height="16" aria-hidden="true">
               <path d="M3.105 3.105a1 1 0 011.217-.217l12 6a1 1 0 010 1.784l-12 6a1 1 0 01-1.31-1.31L4.887 11H11a1 1 0 100-2H4.887L2.795 4.422a1 1 0 01.31-1.317z"/>
             </svg>
           )}

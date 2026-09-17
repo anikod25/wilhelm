@@ -1,11 +1,10 @@
-/* Full-viewport shell — everything lives inside this */
+/* Full-viewport shell */
 .layout {
   height: 100%;
   display: flex;
-  background: #f1f5f9;
+  background: var(--bg-base);
 }
 
-/* On md+ screens the chat panel is a centred card */
 @media (min-width: 768px) {
   .layout {
     align-items: center;
@@ -15,13 +14,12 @@
 
   .layout > * {
     width: 100%;
-    max-width: 72rem;   /* wider to accommodate sidebar */
+    max-width: 82rem;   /* wider — accommodates sidebar + chat + trace panel */
     height: 100%;
     max-height: 54rem;
-    border-radius: 1.25rem;
-    box-shadow:
-      0 20px 60px rgba(0, 0, 0, 0.12),
-      0 4px 16px rgba(0, 0, 0, 0.06);
+    border-radius: 0.75rem;
+    border: 1px solid var(--border);
     overflow: hidden;
+    box-shadow: 0 0 0 1px var(--border-sub), 0 24px 64px rgba(0,0,0,0.5);
   }
 }

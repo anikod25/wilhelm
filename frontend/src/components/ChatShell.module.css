@@ -1,8 +1,8 @@
-/* ── Outer shell — full height flex row ───────────────────────────── */
+/* ── Outer shell ──────────────────────────────────────────────────── */
 .shell {
   display: flex;
   height: 100%;
-  background: #fff;
+  background: var(--bg-base);
   overflow: hidden;
 }
 
@@ -10,13 +10,13 @@
    SIDEBAR
    ════════════════════════════════════════════════════════════════════ */
 .sidebar {
-  display: none; /* hidden on mobile — replaced by .mobileHeader */
+  display: none;
   flex-direction: column;
-  width: 15rem;
+  width: 14rem;
   flex-shrink: 0;
-  background: #1e1b4b;  /* deep indigo */
-  color: #e0e7ff;
-  padding: 1.5rem 1rem 1rem;
+  background: var(--bg-panel);
+  border-right: 1px solid var(--border);
+  padding: 1.25rem 0.875rem 0.875rem;
   overflow-y: auto;
 }
 
@@ -24,28 +24,27 @@
   .sidebar { display: flex; }
 }
 
-/* Brand block */
+/* Brand */
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0 0.25rem 0.25rem;
+  gap: 0.625rem;
+  padding: 0 0.25rem 0.125rem;
 }
 
 .logoMark {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 0.75rem;
-  background: #4f46e5;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.375rem;
+  background: var(--teal);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 800;
-  color: #fff;
+  color: #0B1120;
   flex-shrink: 0;
   letter-spacing: -0.03em;
-  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.5);
 }
 
 .brandText {
@@ -55,36 +54,33 @@
 }
 
 .brandName {
-  font-size: 1.0625rem;
+  font-size: 0.9375rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 .brandTagline {
-  font-size: 0.6875rem;
-  color: #818cf8;
-  letter-spacing: 0.01em;
+  font-size: 0.625rem;
+  color: var(--text-muted);
   line-height: 1.3;
 }
 
 /* Divider */
 .divider {
   border: none;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  margin: 1.25rem 0 1rem;
+  border-top: 1px solid var(--border);
+  margin: 1rem 0 0.875rem;
 }
 
 /* Nav */
 .navLabel {
-  font-size: 0.625rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #6366f1;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-muted);
   padding: 0 0.5rem;
-  margin-bottom: 0.375rem;
+  margin-bottom: 0.25rem;
 }
 
 .nav {
@@ -97,31 +93,56 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 0.625rem;
-  border-radius: 0.5rem;
-  font-size: 0.8125rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  color: #a5b4fc;
+  color: var(--text-secondary);
   text-decoration: none;
-  transition: background 0.12s, color 0.12s;
+  transition: background 0.1s, color 0.1s;
+  border: 1px solid transparent;
 }
 
 .navItem:hover {
-  background: rgba(255,255,255,0.07);
-  color: #e0e7ff;
+  background: var(--bg-raised);
+  color: var(--text-primary);
 }
 
 .navItemActive {
-  background: rgba(99, 102, 241, 0.25);
-  color: #e0e7ff;
+  background: var(--teal-dim);
+  color: var(--teal);
+  border-color: rgba(94,234,212,0.18);
 }
 
-/* Sidebar spacer + footer */
+.navItemActive:hover {
+  background: rgba(94,234,212,0.18);
+  color: var(--teal);
+}
+
+/* Locked nav items (Finance, Legal) */
+.navItemLocked {
+  opacity: 0.38;
+  cursor: default;
+  pointer-events: none;
+}
+
+.navItemLocked:hover {
+  background: none;
+  color: var(--text-secondary);
+}
+
+.lockIcon {
+  margin-left: auto;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* Spacer + footer */
 .sidebarSpacer { flex: 1; }
 
 .sidebarFooter {
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 0.875rem;
+  border-top: 1px solid var(--border);
 }
 
 .clearBtn {
@@ -129,21 +150,22 @@
   align-items: center;
   gap: 0.4rem;
   width: 100%;
-  padding: 0.5rem 0.625rem;
-  border-radius: 0.5rem;
-  font-size: 0.8125rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
   font-weight: 500;
   font-family: inherit;
-  color: #a5b4fc;
+  color: var(--text-secondary);
   background: none;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid var(--border);
   cursor: pointer;
-  transition: background 0.12s, color 0.12s;
+  transition: background 0.1s, color 0.1s, border-color 0.1s;
 }
 
 .clearBtn:hover {
-  background: rgba(255,255,255,0.07);
-  color: #e0e7ff;
+  background: var(--bg-raised);
+  color: var(--text-primary);
+  border-color: var(--text-muted);
 }
 
 /* ════════════════════════════════════════════════════════════════════
@@ -154,18 +176,18 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  background: #f8fafc;
+  background: var(--bg-base);
   overflow: hidden;
 }
 
-/* ── Mobile header (visible only on < md) ── */
+/* Mobile header */
 .mobileHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 1rem;
-  background: #fff;
-  border-bottom: 1px solid #e2e8f0;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
   flex-shrink: 0;
 }
 
@@ -180,43 +202,43 @@
 }
 
 .mobileLogoMark {
-  width: 1.875rem;
-  height: 1.875rem;
-  border-radius: 0.5rem;
-  background: #4f46e5;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.3rem;
+  background: var(--teal);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 800;
-  color: #fff;
+  color: #0B1120;
 }
 
 .mobileBrandName {
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  color: #1e1b4b;
+  color: var(--text-primary);
   letter-spacing: -0.02em;
 }
 
 .mobileClearBtn {
-  font-size: 0.8125rem;
+  font-size: 0.8rem;
   font-family: inherit;
   font-weight: 500;
-  color: #6366f1;
+  color: var(--teal);
   background: none;
-  border: 1px solid #e0e7ff;
-  border-radius: 0.5rem;
-  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.3rem;
+  padding: 0.3rem 0.65rem;
   cursor: pointer;
-  transition: background 0.12s;
+  transition: background 0.1s;
 }
 
 .mobileClearBtn:hover {
-  background: #eef2ff;
+  background: var(--teal-dim);
 }
 
-/* ── Message area ── */
+/* Message area */
 .messageArea {
   flex: 1;
   min-height: 0;
@@ -225,21 +247,21 @@
   overflow: hidden;
 }
 
-/* ── Error banner ── */
+/* Error banner */
 .errorBanner {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 0.75rem 0.5rem 1.25rem;
-  background: #fef2f2;
-  border-top: 1px solid #fecaca;
+  padding: 0.5rem 0.75rem 0.5rem 1rem;
+  background: var(--red-bg);
+  border-top: 1px solid rgba(239,68,68,0.25);
   flex-shrink: 0;
 }
 
 .errorText {
   flex: 1;
-  font-size: 0.8125rem;
-  color: #b91c1c;
+  font-size: 0.8rem;
+  color: #fca5a5;
   line-height: 1.4;
 }
 
@@ -256,22 +278,15 @@
   border-radius: 0.25rem;
   cursor: pointer;
   padding: 0;
-  transition: background 0.12s, color 0.12s;
+  transition: background 0.1s, color 0.1s;
 }
 
-.errorDismiss:hover {
-  background: #fee2e2;
-  color: #b91c1c;
-}
+.errorDismiss:hover { background: rgba(239,68,68,0.15); color: #fca5a5; }
+.errorDismiss:focus-visible { outline: 2px solid var(--red); outline-offset: 1px; }
 
-.errorDismiss:focus-visible {
-  outline: 2px solid #ef4444;
-  outline-offset: 1px;
-}
-
-/* ── Input area ── */
+/* Input area */
 .inputArea {
   flex-shrink: 0;
-  background: #fff;
-  border-top: 1px solid #e2e8f0;
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
 }

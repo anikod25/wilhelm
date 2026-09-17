@@ -1,51 +1,38 @@
-/* ── Row layout + entrance animations ───────────────────────────────── */
+/* ── Row layout + entrance animations ─────────────────────────────── */
 .row {
   display: flex;
   align-items: flex-end;
   gap: 0.5rem;
-  /* entrance: plays once on mount */
   animation-duration: 220ms;
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   animation-fill-mode: both;
 }
 
-.rowUser {
-  flex-direction: row;
-  justify-content: flex-end;
-  animation-name: slideInRight;
-}
-
-.rowAssistant {
-  justify-content: flex-start;
-  animation-name: slideInLeft;
-}
+.rowUser      { flex-direction: row; justify-content: flex-end; animation-name: slideInRight; }
+.rowAssistant { justify-content: flex-start;                    animation-name: slideInLeft;  }
 
 @keyframes slideInRight {
-  from { opacity: 0; transform: translateX(14px); }
+  from { opacity: 0; transform: translateX(12px); }
   to   { opacity: 1; transform: translateX(0);    }
 }
-
 @keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-14px); }
+  from { opacity: 0; transform: translateX(-12px); }
   to   { opacity: 1; transform: translateX(0);     }
 }
 
-/* Honour reduced-motion preference */
-@media (prefers-reduced-motion: reduce) {
-  .row { animation: none; }
-}
+@media (prefers-reduced-motion: reduce) { .row { animation: none; } }
 
-/* ── Avatars ─────────────────────────────────────────────────────────── */
+/* ── Avatars ───────────────────────────────────────────────────────── */
 .avatarAssistant,
 .avatarUser {
   flex-shrink: 0;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 0.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   user-select: none;
@@ -54,53 +41,53 @@
 }
 
 .avatarAssistant {
-  background: linear-gradient(135deg, #6366f1, #4f46e5);
-  color: #fff;
-  box-shadow: 0 2px 6px rgba(79, 70, 229, 0.35);
+  background: var(--teal-dim);
+  color: var(--teal);
+  border: 1px solid rgba(94,234,212,0.2);
 }
 
 .avatarUser {
-  background: linear-gradient(135deg, #1e1b4b, #312e81);
-  color: #e0e7ff;
+  background: rgba(245,166,35,0.12);
+  color: var(--amber);
+  border: 1px solid rgba(245,166,35,0.2);
 }
 
-/* ── Body (bubble + source panel + meta) ────────────────────────────── */
+/* ── Body ──────────────────────────────────────────────────────────── */
 .body {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
   min-width: 0;
-  /* wider than before to give source cards room to breathe */
   max-width: min(32rem, 78%);
 }
 
-/* ── Bubble base ─────────────────────────────────────────────────────── */
+/* ── Bubble — flat panels, small radius, hairline border, no shadow ── */
 .bubble {
-  padding: 0.6875rem 0.9375rem;
-  border-radius: 1.125rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: 3px;
   word-break: break-word;
   line-height: 1.6;
   font-size: 0.9375rem;
+  border: 1px solid var(--border);
 }
 
-/* User bubble — indigo gradient, right tail */
+/* User — teal accent bg */
 .bubbleUser {
-  background: linear-gradient(135deg, #4f46e5, #6366f1);
-  color: #fff;
-  border-bottom-right-radius: 0.3rem;
-  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.28);
+  background: rgba(94,234,212,0.1);
+  color: var(--text-primary);
+  border-color: rgba(94,234,212,0.22);
+  border-bottom-right-radius: 1px;
 }
 
-/* Assistant bubble — white card, left tail */
+/* Assistant — raised panel */
 .bubbleAssistant {
-  background: #fff;
-  color: #1e293b;
-  border-bottom-left-radius: 0.3rem;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  background: var(--bg-panel);
+  color: var(--text-primary);
+  border-color: var(--border);
+  border-bottom-left-radius: 1px;
 }
 
-/* Structured-content variant — remove padding so inner components fill flush */
+/* Structured content — remove padding, flush to bubble edges */
 .bubbleRaw {
   padding: 0;
   overflow: hidden;
@@ -113,7 +100,7 @@
   line-height: 1.65;
 }
 
-/* ── Meta row ────────────────────────────────────────────────────────── */
+/* ── Meta row ──────────────────────────────────────────────────────── */
 .meta {
   display: flex;
   align-items: center;
@@ -121,68 +108,59 @@
   padding: 0 0.125rem;
 }
 
-.metaUser {
-  justify-content: flex-end;
-}
+.metaUser { justify-content: flex-end; }
 
 .time {
   font-size: 0.6875rem;
-  color: #94a3b8;
+  color: var(--text-muted);
   font-variant-numeric: tabular-nums;
 }
 
-/* ── Domain badge ────────────────────────────────────────────────────── */
+/* ── Domain badges — amber accent, small radius ────────────────────── */
 .badge {
-  font-size: 0.625rem;
+  font-size: 0.6rem;
   font-weight: 700;
-  padding: 0.125rem 0.5rem;
-  border-radius: 9999px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  letter-spacing: 0.03em;
+  text-transform: none;
   border: 1px solid transparent;
 }
 
-.badge_hr {
-  background: #eff6ff;
-  color: #1d4ed8;
-  border-color: #bfdbfe;
-}
-
+.badge_hr,
 .badge_support {
-  background: #f0fdf4;
-  color: #15803d;
-  border-color: #bbf7d0;
+  background: var(--amber-dim);
+  color: var(--amber);
+  border-color: rgba(245,166,35,0.25);
 }
 
 .badge_out_of_scope {
-  background: #fefce8;
-  color: #92400e;
-  border-color: #fde68a;
+  background: rgba(139,148,173,0.1);
+  color: var(--text-secondary);
+  border-color: var(--border);
 }
 
 /* ════════════════════════════════════════════════════════════════════
    STRUCTURED FORMAT RENDERS
    ════════════════════════════════════════════════════════════════════ */
 
-/* Shared copy button */
 .copyBtn {
   padding: 0.175rem 0.5rem;
   font-size: 0.6875rem;
   font-family: inherit;
   font-weight: 600;
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 0.3rem;
-  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 3px;
+  background: rgba(255,255,255,0.06);
   color: inherit;
   cursor: pointer;
   transition: background 0.12s;
   white-space: nowrap;
 }
+.copyBtn:hover { background: rgba(255,255,255,0.12); }
+.copyBtn:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 
-.copyBtn:hover  { background: rgba(255,255,255,0.2); }
-.copyBtn:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
-
-/* ── Code block ── */
+/* Code block */
 .codeBlock {
   display: flex;
   flex-direction: column;
@@ -195,9 +173,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.4rem 0.75rem;
-  background: #161625;
-  color: #a6adc8;
+  padding: 0.375rem 0.75rem;
+  background: #0d1117;
+  color: var(--text-secondary);
 }
 
 .codeLang {
@@ -205,13 +183,13 @@
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #a78bfa;
+  color: var(--teal);
 }
 
 .codePre {
   margin: 0;
   padding: 0.875rem 1rem;
-  background: #1e1e2e;
+  background: #0d1117;
   color: #cdd6f4;
   font-family: 'Fira Code', 'Cascadia Code', 'Consolas', 'Menlo', monospace;
   font-size: 0.8125rem;
@@ -222,7 +200,7 @@
   overflow-y: auto;
 }
 
-/* ── Excel download ── */
+/* Excel download */
 .downloadWrapper {
   display: flex;
   flex-direction: column;
@@ -234,33 +212,34 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.5rem 1rem;
-  background: #16a34a;
-  color: #fff;
+  padding: 0.45rem 0.875rem;
+  background: rgba(94,234,212,0.12);
+  color: var(--teal);
+  border: 1px solid rgba(94,234,212,0.3);
   font-size: 0.875rem;
   font-family: inherit;
   font-weight: 600;
-  border-radius: 0.5rem;
+  border-radius: 3px;
   text-decoration: none;
-  transition: background 0.13s, transform 0.1s;
+  transition: background 0.12s;
   width: fit-content;
 }
 
-.downloadBtn:hover  { background: #15803d; }
+.downloadBtn:hover  { background: rgba(94,234,212,0.2); }
 .downloadBtn:active { transform: scale(0.97); }
-.downloadBtn:focus-visible { outline: 2px solid #16a34a; outline-offset: 3px; }
+.downloadBtn:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
 .downloadIcon { flex-shrink: 0; }
 
 .downloadHint {
   font-size: 0.6875rem;
-  color: #94a3b8;
+  color: var(--text-muted);
 }
 
-/* ── Email draft ── */
+/* Email draft */
 .emailDraft {
   display: flex;
   flex-direction: column;
-  background: #fffbeb;
+  background: var(--bg-raised);
   border-radius: inherit;
   overflow: hidden;
 }
@@ -269,28 +248,31 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.4rem 0.75rem;
-  background: #d97706;
-  color: #fff;
+  padding: 0.375rem 0.75rem;
+  background: rgba(245,166,35,0.15);
+  border-bottom: 1px solid rgba(245,166,35,0.2);
+  color: var(--amber);
 }
 
 .emailLabel {
   font-size: 0.625rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .emailHeader .copyBtn {
-  border-color: rgba(255,255,255,0.3);
+  border-color: rgba(245,166,35,0.25);
+  background: rgba(245,166,35,0.08);
+  color: var(--amber);
 }
 
 .emailSubject {
   padding: 0.5rem 0.875rem 0.375rem;
   font-size: 0.8125rem;
   font-weight: 700;
-  color: #1c1917;
-  border-bottom: 1px dashed #fde68a;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
   word-break: break-word;
 }
 
@@ -300,7 +282,7 @@
   font-family: inherit;
   font-size: 0.8125rem;
   line-height: 1.7;
-  color: #292524;
+  color: var(--text-secondary);
   white-space: pre-wrap;
   word-break: break-word;
   max-height: 26rem;

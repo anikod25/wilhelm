@@ -1,6 +1,7 @@
 import { useState, useCallback, useRef } from 'react'
 import { sendChat, ChatApiError } from '../api/chat.js'
 import { DUMMY_MESSAGES } from '../data/dummyMessages.js'
+import { useTrace } from './useTrace.js'
 
 /**
  * Chat state wired to POST /api/chat.
@@ -17,12 +18,10 @@ export function useChat() {
   const [isLoading, setIsLoading] = useState(false)
   const [error,     setError]     = useState(null)
 
-  // Persist session ID across turns without triggering re-renders
-  const sessionIdRef = useRef(null)
+  const { traceStage, traceTimings, startTrace, finishTrace, errorTrace } = useTrace()
 
-  // Keep an AbortController per in-flight request so we can cancel on unmount
-  // or when the user clears mid-request
-  const abortRef = useRef(null)
+  const sessionIdRef = useRef(null)
+  const abortRef     = useRef(null)
 
   const sendMessage = useCallback(async (text, format = 'plain') => {
     const trimmed = text.trim()
@@ -43,6 +42,7 @@ export function useChat() {
     setMessages((prev) => [...prev, userMsg])
     setIsLoading(true)
     setError(null)
+    startTrace()
 
     try {
       const data = await sendChat(trimmed, {
@@ -81,6 +81,7 @@ export function useChat() {
       }
 
       setMessages((prev) => [...prev, assistantMsg])
+      finishTrace(data.timing ?? null)
     } catch (err) {
       if (err.name === 'AbortError') return   // cancelled — don't update state
 
@@ -111,8 +112,7 @@ export function useChat() {
       }
 
       setError(msg)
-
-      // Still append an error bubble so the conversation flow is clear
+      errorTrace()
       setMessages((prev) => [
         ...prev,
         {
@@ -146,5 +146,5 @@ export function useChat() {
     setIsLoading(false)
   }, [])
 
-  return { messages, isLoading, error, sendMessage, clearMessages, dismissError }
+  return { messages, isLoading, error, sendMessage, clearMessages, dismissError, traceStage, traceTimings }
 }
