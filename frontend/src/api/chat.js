@@ -61,6 +61,8 @@ export class ChatApiError extends Error {
  * @param {object} [options]
  * @param {string} [options.sessionId]     — session ID from a previous response;
  *                                           omit for the first turn in a conversation
+ * @param {string} [options.format]        — response format: 'plain' | 'json' | 'xml' | 'xlsx' | 'email'
+ *                                           (server default: 'plain')
  * @param {number} [options.historyTurns]  — how many prior turns to inject (server default: 6)
  * @param {AbortSignal} [options.signal]   — pass an AbortController signal to cancel in-flight requests
  * @returns {Promise<ChatResponse>}
@@ -82,11 +84,12 @@ export class ChatApiError extends Error {
  * controller.abort()  // cancels the fetch
  */
 export async function sendChat(query, options = {}) {
-  const { sessionId, historyTurns, signal } = options
+  const { sessionId, format, historyTurns, signal } = options
 
   const body = { query }
-  if (sessionId)    body.sessionId    = sessionId
-  if (historyTurns) body.historyTurns = historyTurns
+  if (sessionId)                       body.sessionId    = sessionId
+  if (format && format !== 'plain')    body.format       = format
+  if (historyTurns)                    body.historyTurns = historyTurns
 
   let response
   try {

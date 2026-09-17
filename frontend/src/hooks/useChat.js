@@ -6,11 +6,11 @@ import { DUMMY_MESSAGES } from '../data/dummyMessages.js'
  * Chat state wired to POST /api/chat.
  *
  * Returns:
- *   messages          — Message[], oldest-first
- *   isLoading         — true while a response is in-flight
- *   error             — last error string, or null
- *   sendMessage(text) — sends query, appends user turn, awaits assistant reply
- *   clearMessages     — wipe history back to the welcome message + reset session
+ *   messages                   — Message[], oldest-first
+ *   isLoading                  — true while a response is in-flight
+ *   error                      — last error string, or null
+ *   sendMessage(text, format)  — sends query + format, appends user turn, awaits assistant reply
+ *   clearMessages              — wipe history back to the welcome message + reset session
  */
 export function useChat() {
   const [messages,  setMessages]  = useState(DUMMY_MESSAGES)
@@ -24,7 +24,7 @@ export function useChat() {
   // or when the user clears mid-request
   const abortRef = useRef(null)
 
-  const sendMessage = useCallback(async (text) => {
+  const sendMessage = useCallback(async (text, format = 'plain') => {
     const trimmed = text.trim()
     if (!trimmed || isLoading) return
 
@@ -47,6 +47,7 @@ export function useChat() {
     try {
       const data = await sendChat(trimmed, {
         sessionId: sessionIdRef.current ?? undefined,
+        format,
         signal:    abortRef.current.signal,
       })
 

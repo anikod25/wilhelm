@@ -19,7 +19,7 @@ import styles from './ChatShell.module.css'
  *   messages:  import('../data/dummyMessages.js').Message[],
  *   isLoading: boolean,
  *   error:     string | null,
- *   onSend:    (text: string) => void,
+ *   onSend:    (text: string, format: string) => void,
  *   onClear:   () => void,
  * }} props
  */
