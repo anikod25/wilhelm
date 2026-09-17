@@ -89,7 +89,11 @@ export default function ChatShell({ messages, isLoading, error, onSend, onClear 
 
         {/* Messages */}
         <div className={styles.messageArea}>
-          <MessageList messages={messages} isLoading={isLoading} />
+          <MessageList
+            messages={messages}
+            isLoading={isLoading}
+            onExampleClick={(query) => onSend(query, 'plain')}
+          />
         </div>
 
         {/* Error banner */}

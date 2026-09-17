@@ -8,6 +8,13 @@
   scroll-behavior: smooth;
 }
 
+/* When the empty state is shown, centre it vertically */
+.listEmpty {
+  padding: 0;
+  gap: 0;
+  justify-content: stretch;
+}
+
 /* ── Typing indicator ───────────────────────────────────────────────── */
 .typingRow {
   display: flex;
