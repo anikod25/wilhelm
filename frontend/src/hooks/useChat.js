@@ -63,13 +63,15 @@ export function useChat() {
         content:          data.answer,
         domain:           data.domain,
         stage:            data.stage,
+        grounded:         data.grounded ?? false,
+        // Flat citation strings (kept for backward compat)
         sources:          (data.sources ?? []).map((s) =>
-          // sources from the pipeline are SourceRef objects; flatten to strings
-          // matching the format MessageBubble expects
           typeof s === 'string'
             ? s
             : [s.domain, s.filename, s.heading].filter(Boolean).join(' › ')
         ),
+        // Rich source metadata for the SourcePanel
+        sourceDocs:       data.sourceDocs ?? [],
         // Format-specific rendering fields
         format:           data.format           ?? 'plain',
         formattedPayload: data.formattedPayload ?? null,

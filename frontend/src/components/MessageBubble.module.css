@@ -64,13 +64,14 @@
   color: #e0e7ff;
 }
 
-/* ── Body (bubble + sources + meta) ─────────────────────────────────── */
+/* ── Body (bubble + source panel + meta) ────────────────────────────── */
 .body {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
   min-width: 0;
-  max-width: min(28rem, 74%);
+  /* wider than before to give source cards room to breathe */
+  max-width: min(32rem, 78%);
 }
 
 /* ── Bubble base ─────────────────────────────────────────────────────── */
@@ -110,25 +111,6 @@
   font-size: 0.9375rem;
   white-space: pre-wrap;
   line-height: 1.65;
-}
-
-/* ── Sources ─────────────────────────────────────────────────────────── */
-.sources {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  padding: 0 0.125rem;
-}
-
-.source {
-  font-size: 0.7rem;
-  color: #64748b;
-}
-
-.source::before {
-  content: '› ';
-  color: #94a3b8;
 }
 
 /* ── Meta row ────────────────────────────────────────────────────────── */

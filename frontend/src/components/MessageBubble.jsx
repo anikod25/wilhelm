@@ -1,3 +1,4 @@
+import SourcePanel from './SourcePanel.jsx'
 import styles from './MessageBubble.module.css'
 
 const DOMAIN_LABELS = {
@@ -62,9 +63,13 @@ function EmailDraft({ text }) {
 
 // ── MessageBubble ─────────────────────────────────────────────────────────────
 
+/**
+ * Single chat message bubble.
+ * Assistant messages with sourceDocs show an expandable SourcePanel below.
+ */
 export default function MessageBubble({ message }) {
   const isUser = message.role === 'user'
-  const { format, formattedPayload, downloadUrl, downloadName } = message
+  const { format, formattedPayload, downloadUrl, downloadName, sourceDocs, grounded } = message
 
   const isStructured = !isUser && (
     ((format === 'json' || format === 'xml') && formattedPayload) ||
@@ -84,6 +89,10 @@ export default function MessageBubble({ message }) {
     return <p className={styles.content}>{message.content}</p>
   }
 
+  // Show the source panel for assistant messages that have sourceDocs,
+  // regardless of format — even JSON/XML responses carry grounding provenance.
+  const showSources = !isUser && sourceDocs?.length > 0
+
   return (
     <div className={`${styles.row} ${isUser ? styles.rowUser : styles.rowAssistant}`}>
 
@@ -94,32 +103,30 @@ export default function MessageBubble({ message }) {
 
       <div className={styles.body}>
         {/* Bubble */}
-        <div className={`
-          ${styles.bubble}
-          ${isUser ? styles.bubbleUser : styles.bubbleAssistant}
-          ${isStructured ? styles.bubbleRaw : ''}
-        `}
+        <div
+          className={`
+            ${styles.bubble}
+            ${isUser ? styles.bubbleUser : styles.bubbleAssistant}
+            ${isStructured ? styles.bubbleRaw : ''}
+          `}
           role="article"
           aria-label={isUser ? `Your message: ${message.content}` : 'Wilhelm response'}
         >
           {renderContent()}
         </div>
 
-        {/* Sources (assistant, plain/json) */}
-        {!isUser && message.sources?.length > 0 &&
-          (!format || format === 'plain' || format === 'json') && (
-          <ul className={styles.sources} aria-label="Sources">
-            {message.sources.map((src, i) => (
-              <li key={i} className={styles.source}>{src}</li>
-            ))}
-          </ul>
+        {/* Source panel — expandable, below the bubble */}
+        {showSources && (
+          <SourcePanel sourceDocs={sourceDocs} grounded={grounded ?? false} />
         )}
 
-        {/* Meta: badge + timestamp */}
+        {/* Meta: domain badge + timestamp */}
         <div className={`${styles.meta} ${isUser ? styles.metaUser : ''}`}>
           {!isUser && message.domain && DOMAIN_LABELS[message.domain] && (
-            <span className={`${styles.badge} ${styles[`badge_${message.domain}`]}`}
-              aria-label={`Domain: ${DOMAIN_LABELS[message.domain]}`}>
+            <span
+              className={`${styles.badge} ${styles[`badge_${message.domain}`]}`}
+              aria-label={`Domain: ${DOMAIN_LABELS[message.domain]}`}
+            >
               {DOMAIN_LABELS[message.domain]}
             </span>
           )}
