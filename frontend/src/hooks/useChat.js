@@ -58,19 +58,24 @@ export function useChat() {
 
       /** @type {import('../data/dummyMessages.js').Message} */
       const assistantMsg = {
-        id:        crypto.randomUUID(),
-        role:      'assistant',
-        content:   data.answer,
-        domain:    data.domain,
-        stage:     data.stage,
-        sources:   (data.sources ?? []).map((s) =>
+        id:               crypto.randomUUID(),
+        role:             'assistant',
+        content:          data.answer,
+        domain:           data.domain,
+        stage:            data.stage,
+        sources:          (data.sources ?? []).map((s) =>
           // sources from the pipeline are SourceRef objects; flatten to strings
           // matching the format MessageBubble expects
           typeof s === 'string'
             ? s
             : [s.domain, s.filename, s.heading].filter(Boolean).join(' › ')
         ),
-        timestamp: Date.now(),
+        // Format-specific rendering fields
+        format:           data.format           ?? 'plain',
+        formattedPayload: data.formattedPayload ?? null,
+        downloadUrl:      data.downloadUrl      ?? null,
+        downloadName:     data.downloadName     ?? null,
+        timestamp:        Date.now(),
       }
 
       setMessages((prev) => [...prev, assistantMsg])
@@ -104,7 +109,13 @@ export function useChat() {
     abortRef.current?.abort()
     abortRef.current  = null
     sessionIdRef.current = null
-    setMessages(DUMMY_MESSAGES.slice(0, 1))   // keep welcome message only
+
+    // Revoke any xlsx object URLs that were created so the browser can free memory
+    setMessages((prev) => {
+      prev.forEach((m) => { if (m.downloadUrl) URL.revokeObjectURL(m.downloadUrl) })
+      return DUMMY_MESSAGES.slice(0, 1)   // keep welcome message only
+    })
+
     setError(null)
     setIsLoading(false)
   }, [])
