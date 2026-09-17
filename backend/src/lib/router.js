@@ -21,6 +21,7 @@
  */
 
 import { generateText } from './llm.js'
+import { LLMError }    from './errors.js'
 
 // ── Valid domains ─────────────────────────────────────────────────────────────
 
@@ -180,12 +181,11 @@ export async function routeQuery(query) {
   let raw = ''
   try {
     raw = await generateText(prompt, {
-      temperature: 0,      // deterministic — classification needs no creativity
-      maxTokens: 32,       // domain+confidence JSON is ~30 chars; cap spend
+      temperature: 0,
+      maxTokens: 32,
     })
   } catch (err) {
-    // Surface the error message but degrade gracefully
-    throw new Error(`routeQuery: LLM call failed — ${err.message}`)
+    throw new LLMError(err.message ?? String(err), err)
   }
 
   const { domain, confidence } = parseResponse(raw)

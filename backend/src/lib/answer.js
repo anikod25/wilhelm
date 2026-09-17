@@ -36,6 +36,7 @@
  */
 
 import { generateText } from './llm.js'
+import { LLMError }    from './errors.js'
 
 // ── Defaults ──────────────────────────────────────────────────────────────────
 
@@ -291,7 +292,12 @@ export async function generateAnswer(query, chunks, options = {}) {
   )
 
   // ── Generate ──────────────────────────────────────────────────────────────
-  const raw = await generateText(prompt, { temperature, maxTokens })
+  let raw
+  try {
+    raw = await generateText(prompt, { temperature, maxTokens })
+  } catch (err) {
+    throw new LLMError(err.message ?? String(err), err)
+  }
   const answer = raw.trim()
 
   // ── Assess grounding and build sources ───────────────────────────────────

@@ -84,9 +84,31 @@ export function useChat() {
     } catch (err) {
       if (err.name === 'AbortError') return   // cancelled — don't update state
 
-      const msg = err instanceof ChatApiError && err.serverMsg
-        ? err.serverMsg
-        : (err.message ?? 'Something went wrong. Please try again.')
+      // Map HTTP status codes to friendly messages the user can act on.
+      // serverMsg comes from the backend's { error: '...' } JSON body.
+      let msg
+      if (err instanceof ChatApiError) {
+        if (err.status === 0) {
+          msg = 'Could not reach the server. Check your connection and try again.'
+        } else if (err.status === 400) {
+          // 400s are validation errors — the serverMsg is already user-safe
+          msg = err.serverMsg ?? 'Invalid request. Please try rephrasing your question.'
+        } else if (err.status === 401 || err.status === 403) {
+          msg = 'Access denied. Please contact your administrator.'
+        } else if (err.status === 429) {
+          msg = 'Too many requests. Please wait a moment and try again.'
+        } else if (err.status === 502 || err.status === 503) {
+          // 502 is what the backend returns for LLM / vector-store errors —
+          // the serverMsg is already the sanitised userMessage from errors.js
+          msg = err.serverMsg ?? 'A backend service is temporarily unavailable. Please try again shortly.'
+        } else if (err.status >= 500) {
+          msg = err.serverMsg ?? 'Something went wrong on our end. Please try again in a moment.'
+        } else {
+          msg = err.serverMsg ?? err.message ?? 'Something went wrong. Please try again.'
+        }
+      } else {
+        msg = err.message ?? 'Something went wrong. Please try again.'
+      }
 
       setError(msg)
 
@@ -106,6 +128,8 @@ export function useChat() {
     }
   }, [isLoading])
 
+  const dismissError = useCallback(() => setError(null), [])
+
   const clearMessages = useCallback(() => {
     // Cancel any in-flight request before clearing
     abortRef.current?.abort()
@@ -122,5 +146,5 @@ export function useChat() {
     setIsLoading(false)
   }, [])
 
-  return { messages, isLoading, error, sendMessage, clearMessages }
+  return { messages, isLoading, error, sendMessage, clearMessages, dismissError }
 }

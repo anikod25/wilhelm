@@ -40,6 +40,7 @@
  */
 
 import { embedText, queryVectorStore } from './vectorstore.js'
+import { VectorStoreError }           from './errors.js'
 
 // ── Domain mapping ────────────────────────────────────────────────────────────
 
@@ -173,16 +174,37 @@ export async function retrieve(query, domain, options = {}) {
   // filtering without always coming back short.
   const fetchK = minScore > 0 ? Math.min(topK * 3, 100) : topK
 
-  const embedding = await embedText(query.trim())
-  const raw = await queryVectorStore(embedding, fetchK, filter)
+  let embedding
+  try {
+    embedding = await embedText(query.trim())
+  } catch (err) {
+    throw new VectorStoreError('embedding', err.message ?? String(err), err)
+  }
+
+  let raw
+  try {
+    raw = await queryVectorStore(embedding, fetchK, filter)
+  } catch (err) {
+    throw new VectorStoreError('query', err.message ?? String(err), err)
+  }
 
   // ── Post-process ──────────────────────────────────────────────────────────
 
-  return raw
+  const results = raw
     .map(shapeResult)
     .filter((r) => r.score >= minScore)
-    .sort((a, b) => b.score - a.score)   // best-first (adapters should sort, but be safe)
+    .sort((a, b) => b.score - a.score)
     .slice(0, topK)
+
+  // If the domain is in-scope but the store returned nothing at all (before
+  // score filtering), surface this as a distinct error so the handler can
+  // tell the user the knowledge base is empty rather than silently falling
+  // back to "I don't have that information".
+  if (raw.length === 0 && storedDomain !== null) {
+    throw new VectorStoreError('empty', 'vector store returned zero results for an in-scope domain')
+  }
+
+  return results
 }
 
 /**

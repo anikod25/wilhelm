@@ -3,7 +3,7 @@ import { useChat } from './hooks/useChat.js'
 import styles from './App.module.css'
 
 export default function App() {
-  const { messages, isLoading, error, sendMessage, clearMessages } = useChat()
+  const { messages, isLoading, error, sendMessage, clearMessages, dismissError } = useChat()
 
   return (
     <div className={styles.layout}>
@@ -13,6 +13,7 @@ export default function App() {
         error={error}
         onSend={sendMessage}
         onClear={clearMessages}
+        onDismissError={dismissError}
       />
     </div>
   )
