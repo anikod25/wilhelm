@@ -34,14 +34,13 @@ export default function ChatShell({
           <div className={styles.logoMark} aria-hidden="true">W</div>
           <div className={styles.brandText}>
             <span className={styles.brandName}>Wilhelm</span>
-            <span className={styles.brandTagline}>Internal Knowledge Base</span>
+            <span className={styles.brandTagline}>Unified Enterprise AI Agent</span>
           </div>
         </div>
 
         <hr className={styles.divider} />
 
-        {/* sentence-case label, no ALL-CAPS */}
-        <p className={styles.navLabel}>Topics</p>
+        <p className={styles.navLabel}>Departments</p>
         <nav className={styles.nav} aria-label="Topic shortcuts">
           {/* Active — HR Policies */}
           <a href="#" className={`${styles.navItem} ${styles.navItemActive}`}>

@@ -47,8 +47,6 @@ export default function ChatInput({ onSend, isLoading, disabled = false }) {
 
   return (
     <div className={styles.wrapper}>
-
-      {/* Segmented format selector */}
       <div className={styles.formatBar} role="group" aria-label="Response format">
         <span className={styles.formatLabel}>Format</span>
         <div className={styles.segmented}>
@@ -67,7 +65,6 @@ export default function ChatInput({ onSend, isLoading, disabled = false }) {
         </div>
       </div>
 
-      {/* Input row */}
       <div className={styles.inputRow}>
         <label htmlFor="chat-input" className="visually-hidden">Type your message</label>
         <textarea
@@ -77,7 +74,7 @@ export default function ChatInput({ onSend, isLoading, disabled = false }) {
           value={text}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
-          placeholder="Ask about HR policies or IT support…"
+          placeholder="Ask about HR policy or IT support..."
           rows={1}
           disabled={disabled}
           aria-label="Message input"
@@ -93,14 +90,7 @@ export default function ChatInput({ onSend, isLoading, disabled = false }) {
           disabled={!canSend}
           aria-label="Send message"
         >
-          {isLoading ? (
-            <span className={styles.spinner} aria-hidden="true" />
-          ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-              width="16" height="16" aria-hidden="true">
-              <path d="M3.105 3.105a1 1 0 011.217-.217l12 6a1 1 0 010 1.784l-12 6a1 1 0 01-1.31-1.31L4.887 11H11a1 1 0 100-2H4.887L2.795 4.422a1 1 0 01.31-1.317z"/>
-            </svg>
-          )}
+          {isLoading ? <span className={styles.spinner} aria-hidden="true" /> : 'Send'}
         </button>
       </div>
     </div>

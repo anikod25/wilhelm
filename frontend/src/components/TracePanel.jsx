@@ -92,7 +92,7 @@ export default function TracePanel({ stage, timings }) {
   return (
     <aside className={styles.panel} aria-label="Pipeline trace">
       <header className={styles.header}>
-        <span className={styles.headerTitle}>Trace</span>
+        <span className={styles.headerTitle}>Live Trace</span>
         {isLive && stage !== 'done' && stage !== 'error' && (
           <span className={styles.liveChip} aria-live="polite">live</span>
         )}
