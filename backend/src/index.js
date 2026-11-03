@@ -13,7 +13,6 @@ function validateEnv() {
   if (!process.env.SUPABASE_ANON_KEY) missing.push('SUPABASE_ANON_KEY')
   const llm = (process.env.LLM_PROVIDER ?? 'openai').toLowerCase()
   const embedding = (process.env.EMBEDDING_PROVIDER ?? 'openai').toLowerCase()
-  const vectorStore = (process.env.VECTOR_STORE_PROVIDER ?? 'supabase').toLowerCase()
   if (llm === 'openai' && !process.env.OPENAI_API_KEY) missing.push('OPENAI_API_KEY')
   if (llm === 'gemini' && !process.env.GEMINI_API_KEY) missing.push('GEMINI_API_KEY')
   if (llm === 'local' && !process.env.LLM_BASE_URL) missing.push('LLM_BASE_URL')
@@ -21,9 +20,6 @@ function validateEnv() {
   if (embedding === 'gemini' && !process.env.GEMINI_API_KEY) missing.push('GEMINI_API_KEY (for embeddings)')
   if (embedding === 'local' && !process.env.EMBEDDING_BASE_URL && !process.env.LLM_BASE_URL) {
     missing.push('EMBEDDING_BASE_URL or LLM_BASE_URL')
-  }
-  if (vectorStore === 'supabase' && !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-    missing.push('SUPABASE_SERVICE_ROLE_KEY (for patent document vectors)')
   }
   if (missing.length) {
     console.warn(

@@ -25,23 +25,13 @@
  *   OPENAI_API_KEY / GEMINI_API_KEY / LOCAL_API_KEY
  *
  * ── Vector-store providers ────────────────────────────────────────────────────
- *   VECTOR_STORE_PROVIDER = supabase | pinecone | chroma   (default: supabase)
- *
- *   Pinecone:
- *     PINECONE_API_KEY, PINECONE_INDEX_NAME
- *
- *   Chroma (requires a running `chroma run` server):
+ *   Chroma (the document store for this branch; requires a running server):
  *     CHROMA_URL        (default: http://localhost:8000)
  *     CHROMA_COLLECTION (default: wilhelm)
- *
- *   Supabase (PostgREST + pgvector):
- *     SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY
- *     SUPABASE_TABLE (default: documents), SUPABASE_MATCH_FUNCTION (default: match_documents)
  */
 
 import OpenAI from 'openai'
 import { GoogleGenAI } from '@google/genai'
-import { Pinecone } from '@pinecone-database/pinecone'
 import { ChromaClient } from 'chromadb'
 
 // ── Env helpers ───────────────────────────────────────────────────────────────
@@ -126,77 +116,28 @@ const EMBEDDING_PROVIDERS = {
 
 // Lazy singletons — created once on first use so startup doesn't fail if
 // credentials aren't set for a store that won't be used.
-let _pineconeIndex = null
 let _chromaCollection = null
-
-function supabaseConfig() {
-  const base = requireEnv('SUPABASE_URL').replace(/\/$/, '')
-  return {
-    base,
-    key: requireEnv('SUPABASE_SERVICE_ROLE_KEY'),
-    table: env('SUPABASE_TABLE', 'documents'),
-    matchFunction: env('SUPABASE_MATCH_FUNCTION', 'match_documents'),
-  }
-}
-
-async function supabaseRequest(path, options = {}) {
-  const { base, key } = supabaseConfig()
-  const response = await fetch(`${base}/rest/v1/${path}`, {
-    ...options,
-    headers: {
-      apikey: key,
-      Authorization: `Bearer ${key}`,
-      'Content-Type': 'application/json',
-      ...(options.headers ?? {}),
-    },
-  })
-  if (!response.ok) {
-    const detail = await response.text()
-    throw new Error(`Supabase request failed (${response.status}): ${detail}`)
-  }
-  if (response.status === 204) return null
-  return response.json()
-}
-
-async function getPineconeIndex() {
-  if (_pineconeIndex) return _pineconeIndex
-
-  const pc = new Pinecone({ apiKey: requireEnv('PINECONE_API_KEY') })
-  _pineconeIndex = pc.index(requireEnv('PINECONE_INDEX_NAME'))
-  return _pineconeIndex
-}
 
 async function getChromaCollection() {
   if (_chromaCollection) return _chromaCollection
 
+  const chromaUrl = new URL(env('CHROMA_URL', 'http://localhost:8000'))
   const client = new ChromaClient({
-    path: env('CHROMA_URL', 'http://localhost:8000'),
+    host: chromaUrl.hostname,
+    port: Number(chromaUrl.port || (chromaUrl.protocol === 'https:' ? 443 : 80)),
+    ssl: chromaUrl.protocol === 'https:',
   })
   const collectionName = env('CHROMA_COLLECTION', 'wilhelm')
 
-  // getOrCreate so the collection is always available
+  // Wilhelm supplies vectors itself, so Chroma must not select a default embedder.
   _chromaCollection = await client.getOrCreateCollection({
     name: collectionName,
+    embeddingFunction: null,
   })
   return _chromaCollection
 }
 
 // ── Upsert implementations ────────────────────────────────────────────────────
-
-/**
- * @param {Array<{id: string, embedding: number[], metadata?: object, text?: string}>} items
- */
-async function upsertPinecone(items) {
-  const index = await getPineconeIndex()
-
-  const vectors = items.map(({ id, embedding, metadata = {}, text }) => ({
-    id,
-    values: embedding,
-    metadata: text ? { ...metadata, text } : metadata,
-  }))
-
-  await index.upsert(vectors)
-}
 
 /**
  * @param {Array<{id: string, embedding: number[], metadata?: object, text?: string}>} items
@@ -207,25 +148,10 @@ async function upsertChroma(items) {
   await collection.upsert({
     ids: items.map((i) => i.id),
     embeddings: items.map((i) => i.embedding),
-    metadatas: items.map(({ metadata = {}, text }) =>
-      text ? { ...metadata, text } : metadata
-    ),
+    metadatas: items.map(({ metadata = {} }) => Object.fromEntries(
+      Object.entries(metadata).filter(([, value]) => value !== null && value !== undefined)
+    )),
     documents: items.map((i) => i.text ?? ''),
-  })
-}
-
-async function upsertSupabase(items) {
-  const { table } = supabaseConfig()
-  const rows = items.map(({ id, embedding, metadata = {}, text = '' }) => ({
-    id,
-    content: text,
-    metadata,
-    embedding,
-  }))
-  await supabaseRequest(`${encodeURIComponent(table)}?on_conflict=id`, {
-    method: 'POST',
-    headers: { Prefer: 'resolution=merge-duplicates,return=minimal' },
-    body: JSON.stringify(rows),
   })
 }
 
@@ -234,28 +160,6 @@ async function upsertSupabase(items) {
 /**
  * @typedef {{ id: string, score: number, metadata: object, text?: string }} QueryResult
  */
-
-/**
- * @param {number[]} embedding
- * @param {number} topK
- * @param {object} [filter]
- * @returns {Promise<QueryResult[]>}
- */
-async function queryPinecone(embedding, topK, filter) {
-  const index = await getPineconeIndex()
-
-  const response = await index.query({
-    vector: embedding,
-    topK,
-    filter,
-    includeMetadata: true,
-  })
-
-  return response.matches.map(({ id, score, metadata = {} }) => {
-    const { text, ...rest } = metadata
-    return { id, score, metadata: rest, text }
-  })
-}
 
 /**
  * @param {number[]} embedding
@@ -287,51 +191,27 @@ async function queryChroma(embedding, topK, filter) {
   }))
 }
 
-async function querySupabase(embedding, topK, filter) {
-  const { matchFunction } = supabaseConfig()
-  const domain = filter?.domain?.$eq ?? null
-  const applicationNumber = filter?.application_number?.$eq ?? null
-  const rows = await supabaseRequest(`rpc/${encodeURIComponent(matchFunction)}`, {
-    method: 'POST',
-    body: JSON.stringify({
-      query_embedding: embedding,
-      match_count: topK,
-      filter_domain: domain,
-      filter_application_number: applicationNumber,
-    }),
-  })
-  return rows.map(({ id, content, metadata = {}, similarity }) => ({
-    id,
-    score: Number(similarity ?? 0),
-    metadata,
-    text: content,
-  }))
-}
-
 /** Remove stale tail chunks after a source has been successfully re-ingested. */
 export async function cleanupStalePatentChunks(sourceId, keepChunkCount) {
-  const functionName = env('SUPABASE_CLEANUP_FUNCTION', 'cleanup_patent_document_chunks')
-  await supabaseRequest(`rpc/${encodeURIComponent(functionName)}`, {
-    method: 'POST',
-    body: JSON.stringify({
-      p_source_id: sourceId,
-      p_keep_chunk_count: keepChunkCount,
-    }),
+  const collection = await getChromaCollection()
+  await collection.delete({
+    where: {
+      $and: [
+        { source_id: { $eq: sourceId } },
+        { chunkIndex: { $gte: keepChunkCount } },
+      ],
+    },
   })
 }
 
-const VECTOR_STORE_PROVIDERS = {
-  pinecone: { upsert: upsertPinecone, query: queryPinecone },
-  chroma: { upsert: upsertChroma, query: queryChroma },
-  supabase: { upsert: upsertSupabase, query: querySupabase },
-}
+const VECTOR_STORE_PROVIDERS = { chroma: { upsert: upsertChroma, query: queryChroma } }
 
 function getVectorStore() {
-  const provider = env('VECTOR_STORE_PROVIDER', 'supabase').toLowerCase()
+  const provider = env('VECTOR_STORE_PROVIDER', 'chroma').toLowerCase()
   const store = VECTOR_STORE_PROVIDERS[provider]
   if (!store) {
     throw new Error(
-      `Unknown VECTOR_STORE_PROVIDER "${provider}". Valid values: ${Object.keys(VECTOR_STORE_PROVIDERS).join(', ')}`
+      `Unknown VECTOR_STORE_PROVIDER "${provider}". This branch uses Chroma for patent documents.`
     )
   }
   return store
@@ -380,9 +260,7 @@ export async function upsertVectors(items) {
  *
  * @param {number[]} embedding  - Query vector (must match index dimensions).
  * @param {number}   topK       - Maximum number of results to return.
- * @param {object}   [filter]   - Provider-specific metadata filter (optional).
- *                                Pinecone: https://docs.pinecone.io/guides/data/filter-with-metadata
- *                                Chroma:   https://docs.trychroma.com/guides#using-where-filters
+ * @param {object}   [filter]   - Chroma metadata filter (optional).
  * @returns {Promise<Array<{id: string, score: number, metadata: object, text?: string}>>}
  */
 export async function queryVectorStore(embedding, topK = 10, filter) {

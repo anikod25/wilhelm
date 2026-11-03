@@ -58,15 +58,28 @@ function getApplicationNumber(filePath, inputDir, override) {
   if (override) return override.trim()
   const relativePath = relative(inputDir, filePath).replace(/\\/g, '/')
   const segments = relativePath.split('/')
-  return segments.length > 1 ? segments[0] : null
+  if (segments.length < 2) return null
+  if (segments[0].toLowerCase() === 'applications') return segments.length > 2 ? segments[1] : null
+  if (['general', 'forms', 'notices', 'process', 'processes', 'procedures', 'guides', 'reference', 'templates']
+    .includes(segments[0].toLowerCase())) return null
+  // Keep the existing <application-number>/<file> layout supported.
+  return segments[0]
 }
 
-function getDocumentType(filename) {
-  const value = filename.toLowerCase().replace(/[_-]+/g, ' ')
+function getDocumentType(filename, relativePath = '') {
+  const value = `${relativePath} ${filename}`.toLowerCase().replace(/[_-]+/g, ' ')
   const known = [
     ['office action', 'office_action'],
+    ['office-action', 'office_action'],
+    ['notice', 'notice'],
     ['response', 'response'],
     ['amendment', 'amendment'],
+    ['checklist', 'checklist'],
+    ['procedure', 'procedure'],
+    ['process', 'procedure'],
+    ['guide', 'guide'],
+    ['form', 'form'],
+    ['fee schedule', 'fee_schedule'],
     ['application', 'application'],
     ['filing', 'filing'],
     ['claims', 'claims'],
@@ -91,7 +104,7 @@ async function buildChunks(filePath, config) {
   const sourceId = relative(config.input, filePath).replace(/\\/g, '/')
   const filename = basename(filePath, extname(filePath))
   const applicationNumber = getApplicationNumber(filePath, config.input, config.applicationNumber)
-  const documentType = getDocumentType(filename)
+  const documentType = getDocumentType(filename, relativePath)
   const totalChunks = rawChunks.length
 
   return rawChunks.map((chunk, index) => ({
@@ -122,7 +135,7 @@ async function main() {
   const files = collectFiles(config.input, SUPPORTED_EXTENSIONS)
   if (!files.length) {
     console.log(`No PDF, Markdown, or text documents found in ${config.input}`)
-    console.log('Put application-specific files under data/patent-documents/<application-number>/.')
+    console.log('Put general reference files under data/patent-documents/general/ and application-specific files under data/patent-documents/applications/<application-number>/.')
     return
   }
 
@@ -138,7 +151,7 @@ async function main() {
   }
 
   if (!chunks.length) {
-    console.log('No extractable text found; nothing was sent to Supabase.')
+    console.log('No extractable text found; nothing was sent to the vector store.')
     return
   }
   console.log(`Prepared ${chunks.length} chunk(s).`)
@@ -150,8 +163,9 @@ async function main() {
     return
   }
 
-  if ((process.env.VECTOR_STORE_PROVIDER ?? 'pinecone').toLowerCase() !== 'supabase') {
-    throw new Error('Patent document ingestion currently requires VECTOR_STORE_PROVIDER=supabase')
+  const vectorStoreProvider = (process.env.VECTOR_STORE_PROVIDER ?? 'chroma').toLowerCase()
+  if (vectorStoreProvider !== 'chroma') {
+    throw new Error('This IP tracker branch stores patent documents in Chroma; set VECTOR_STORE_PROVIDER=chroma')
   }
 
   const embedded = new Array(chunks.length)
@@ -180,7 +194,7 @@ async function main() {
   for (const [sourceId, chunkCount] of sourceCounts) {
     await cleanupStalePatentChunks(sourceId, chunkCount)
   }
-  console.log(`Patent document ingestion complete: ${embedded.length} chunk(s) indexed.`)
+  console.log(`Patent document ingestion complete: ${embedded.length} chunk(s) indexed in ${vectorStoreProvider}.`)
 }
 
 main().catch((error) => {

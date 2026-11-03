@@ -11,6 +11,13 @@ const MAX_HISTORY_TURNS = 10
 const DEFAULT_TOP_K = 5
 const PLANNER_INTENTS = new Set(['record', 'documents', 'both', 'conversation', 'clarify'])
 
+function asksAboutIpReferenceMaterial(query) {
+  const text = String(query ?? '').toLowerCase()
+  const hasIpContext = /\b(?:ip|patent|filing|inventor|office action)\b/.test(text)
+  const asksAboutMaterial = /\b(?:process|procedure|form|forms|notice|notices|checklist|template|guide|document|documents|steps|respond)\b/.test(text)
+  return hasIpContext && asksAboutMaterial
+}
+
 function extractJson(text) {
   const cleaned = String(text ?? '').replace(/^```(?:json)?\s*|\s*```$/g, '').trim()
   try { return JSON.parse(cleaned) } catch { /* recover a JSON object surrounded by prose */ }
@@ -57,6 +64,7 @@ Return ONLY valid JSON with exactly these keys:
 Rules:
 - For current status, dates, assignee, or fields in the tracker, select record.
 - For explanations from filings, office actions, or patent reference documents, select documents.
+- For IP or patent filing processes, forms, notices, checklists, templates, or procedures, select documents even when the question is phrased generally.
 - Select both when the user asks for a record fact and an explanation supported by its documents.
 - Resolve follow-ups such as "what does that mean?" from the recent conversation. If they refer to the active patent below, set use_active_patent=true.
 - If the user refers to a particular patent but no identifier is in the current turn or active context, select clarify and ask for its application number or IP ID.
@@ -75,7 +83,11 @@ ${query}`
 
   const raw = await generateText(prompt, { temperature: 0, maxTokens: 300 })
   const parsed = extractJson(raw)
-  const intent = PLANNER_INTENTS.has(parsed.intent) ? parsed.intent : 'clarify'
+  let intent = PLANNER_INTENTS.has(parsed.intent) ? parsed.intent : 'clarify'
+  if (asksAboutIpReferenceMaterial(query)) {
+    if (intent === 'conversation') intent = 'documents'
+    else if (intent === 'record') intent = 'both'
+  }
   const identifierType = ['application_number', 'id'].includes(parsed.identifier_type)
     ? parsed.identifier_type
     : 'none'

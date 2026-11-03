@@ -1,12 +1,15 @@
-# Wilhelm IP Tracker Assistant
+# Wilhelm — IP Tracker Chatbot
 
-Wilhelm is a conversational assistant for an IP portfolio. It uses the LLM to
-understand natural questions and follow-ups, then consults the appropriate
-source:
+This branch is the IP-tracker version of Wilhelm. It combines a conversational
+LLM with structured portfolio lookup and retrieval over general IP reference
+materials or documents attached to a specific tracked application.
 
-- **Supabase patent records** for current status and structured tracker fields.
-- **Patent-document RAG** for filing documents, office actions, responses, and
-  other indexed reference material.
+For each question, Wilhelm uses the relevant source:
+
+- **Supabase patent records** for current status and structured tracker fields;
+  this integration uses read-only lookups.
+- **Chroma** for patent-related documents, filing forms, process guides,
+  notices, office actions, responses, and other indexed materials.
 
 For current status, the tracker record is authoritative. Documents provide
 supporting context and citations. Wilhelm should not infer a status or invent a
@@ -24,26 +27,37 @@ progress timeline.
 - IP-focused chat UI, record details, lookup status, and no fabricated patent
   records in the interface.
 
-The old HR/IT router and seed-document ingestion are no longer used by the
-active chat route. Generic RAG/vector modules remain available for the patent
-document flow.
-
 ## Add documents locally
 
-Patent documents belong in the local `data/patent-documents/` folder. The whole
-folder is listed in `.gitignore`, so filings and other private documents are
-not committed or pushed.
-
-For application-specific documents, use this layout:
+IP reference materials belong in the local `data/patent-documents/` folder.
+The whole folder is listed in `.gitignore`, so example materials and private
+filings are not committed or pushed. General forms, notices, and process guides
+can be grouped under `general/`:
 
 ```text
-data/patent-documents/<application-number>/<document-name>.pdf
+data/patent-documents/general/forms/filing-intake-form.md
+data/patent-documents/general/notices/sample-formalities-notice.md
+data/patent-documents/general/process/filing-process-guide.md
 ```
 
-The first directory name becomes the document's `application_number` metadata,
-which lets retrieval stay scoped to the current patent. General patent
-reference documents can sit directly in `data/patent-documents/` and will be
-searchable across the patent document collection.
+Those general documents are searchable across the knowledge base and have no
+application-number filter. For a filing that belongs to one tracked record,
+use:
+
+```text
+data/patent-documents/applications/<application-number>/<document-name>.pdf
+```
+
+The older `<application-number>/<document-name>` layout remains supported.
+The application number becomes metadata so retrieval can stay scoped to the
+current record. Avoid naming a general-material folder after an application
+number; general categories such as `general`, `forms`, `notices`, and
+`process` are recognized as unscoped.
+
+The local demo materials are synthetic examples, not official forms, notices,
+jurisdiction-specific procedures, or legal advice. Confirm actual requirements
+and response deadlines against the relevant IP office and notice. These local
+examples are ignored by Git and are not included in commits.
 
 Supported formats: text-based PDF, Markdown, and TXT. Scanned image-only PDFs
 need OCR before ingestion. The app does not upload or ingest documents
@@ -53,7 +67,7 @@ after reviewing the local files.
 ## Environment
 
 Copy `backend/.env.example` to `backend/.env` and set the project values. The
-default OpenAI + Supabase setup uses:
+default OpenAI + Chroma setup uses:
 
 ```env
 PORT=3001
@@ -64,35 +78,31 @@ OPENAI_API_KEY=your-openai-api-key
 EMBEDDING_PROVIDER=openai
 EMBEDDING_MODEL=text-embedding-3-small
 EMBEDDING_DIMENSIONS=1536
-VECTOR_STORE_PROVIDER=supabase
+VECTOR_STORE_PROVIDER=chroma
 SUPABASE_URL=https://your-project.supabase.co
 SUPABASE_ANON_KEY=your-supabase-anon-key
-SUPABASE_SERVICE_ROLE_KEY=your-server-only-service-role-key
 SUPABASE_PATENT_VIEW=patents
-SUPABASE_TABLE=documents
-SUPABASE_MATCH_FUNCTION=match_documents
-SUPABASE_CLEANUP_FUNCTION=cleanup_patent_document_chunks
+CHROMA_URL=http://localhost:8000
+CHROMA_COLLECTION=wilhelm
 PATENT_RAG_TOP_K=5
 ```
 
 The LLM and embedding providers can also use Gemini or a local
 OpenAI-compatible endpoint; see the comments in `backend/.env.example`.
-Keep all keys in `backend/.env`; do not put Supabase credentials in frontend
-environment variables or commit them.
+Keep keys in `backend/.env`; do not put Supabase credentials in frontend
+environment variables or commit them. Supabase is used only to read the
+existing patent tracker view. Wilhelm does not write tracker records or patent
+documents to Supabase.
 
-## Supabase setup
+## Data storage
 
-`backend/supabase/schema.sql` creates the pgvector document table and the
-search/cleanup functions used by ingestion and retrieval. Apply it in the
-Supabase SQL editor before indexing patent documents. It assumes
-`text-embedding-3-small` at 1536 dimensions.
+The app reads tracker records from `SUPABASE_PATENT_VIEW` (default `patents`)
+using the anon key and the project's existing row-level security. No Supabase
+schema update is required for the document chatbot.
 
-The structured lookup reads `SUPABASE_PATENT_VIEW` (default `patents`) with the
-anon key and normal Supabase row-level security. The document vector adapter
-uses the service-role key from the backend. The current app does not implement
-user sign-in or per-user authorization; do not expose confidential tracker
-records or filings through a publicly accessible deployment until
-authentication and access controls are added.
+Patent-document ingestion and semantic search use the local Chroma server. No
+document chunk is written to Supabase. `backend/supabase/schema.sql` is not
+used by the current Chroma configuration; do not apply it for this setup.
 
 ## Run locally
 
@@ -104,29 +114,37 @@ npm run dev:backend
 npm run dev:frontend
 ```
 
-Run the backend and frontend commands in separate terminals from the
-repository root. Open `http://localhost:5173`.
+Run Chroma, the backend, and the frontend in separate terminals from the
+repository root:
+
+```powershell
+chroma run --path .\backend\chroma_db --host localhost --port 8000
+npm run dev:backend
+npm run dev:frontend
+```
+
+Open `http://localhost:5173`. Chroma must remain running while asking about
+documents.
 
 ## Ingest patent documents
 
-First preview the local files and chunks without embedding or writing to
-Supabase:
+First preview the local files and chunks without generating embeddings or
+writing to Chroma:
 
 ```bash
 npm run ingest:patents:dry-run --prefix backend
 ```
 
-After confirming the folder contents, apply the schema and environment values,
-then ingest:
+After confirming the folder contents and setting `VECTOR_STORE_PROVIDER=chroma`
+plus the embedding provider values, ingest into Chroma:
 
 ```bash
 npm run ingest:patents --prefix backend
 ```
 
-Re-ingestion upserts chunks with stable IDs and removes obsolete trailing
-chunks for each source. It does not delete documents for source files that
-have been removed from the local folder; those should be reviewed and removed
-from the index deliberately.
+Ingestion upserts chunks with stable IDs and removes obsolete trailing chunks
+for each source in Chroma. Supabase is not modified. If a source file is
+removed from the local folder, remove its Chroma records deliberately.
 
 An optional read-only structured lookup check can be run with
 `TEST_PATENT_APPLICATION_NUMBER` or `TEST_PATENT_ID` set in `backend/.env`:
