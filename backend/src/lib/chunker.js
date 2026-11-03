@@ -107,14 +107,17 @@ export function splitIntoChunks(cleanedText, rawText, chunkSize, overlap) {
     const para = paragraphs[paraIdx]
     if (wordBuf.length === 0) bufOffset = para.offset
 
-    wordBuf.push(...wordTokens(para.text))
+    const remainingWords = wordTokens(para.text)
+    while (remainingWords.length) {
+      const room = Math.max(1, chunkSize - wordBuf.length)
+      wordBuf.push(...remainingWords.splice(0, room))
+      if (wordBuf.length >= chunkSize) {
+        flush(para.offset)
+        bufOffset = para.offset
+      }
+    }
 
-    const over = wordBuf.length >= chunkSize
-    const near =
-      wordBuf.length >= chunkSize * 0.8 &&
-      wordBuf.length <= chunkSize * 1.2
-
-    if (over || near) {
+    if (wordBuf.length >= chunkSize * 0.8 && wordBuf.length <= chunkSize * 1.2) {
       flush(para.offset)
       bufOffset = para.offset
     }

@@ -25,7 +25,7 @@
  *   OPENAI_API_KEY / GEMINI_API_KEY / LOCAL_API_KEY
  *
  * ── Vector-store providers ────────────────────────────────────────────────────
- *   VECTOR_STORE_PROVIDER = pinecone | chroma | supabase   (default: pinecone)
+ *   VECTOR_STORE_PROVIDER = supabase | pinecone | chroma   (default: supabase)
  *
  *   Pinecone:
  *     PINECONE_API_KEY, PINECONE_INDEX_NAME
@@ -290,12 +290,14 @@ async function queryChroma(embedding, topK, filter) {
 async function querySupabase(embedding, topK, filter) {
   const { matchFunction } = supabaseConfig()
   const domain = filter?.domain?.$eq ?? null
+  const applicationNumber = filter?.application_number?.$eq ?? null
   const rows = await supabaseRequest(`rpc/${encodeURIComponent(matchFunction)}`, {
     method: 'POST',
     body: JSON.stringify({
       query_embedding: embedding,
       match_count: topK,
       filter_domain: domain,
+      filter_application_number: applicationNumber,
     }),
   })
   return rows.map(({ id, content, metadata = {}, similarity }) => ({
@@ -306,6 +308,18 @@ async function querySupabase(embedding, topK, filter) {
   }))
 }
 
+/** Remove stale tail chunks after a source has been successfully re-ingested. */
+export async function cleanupStalePatentChunks(sourceId, keepChunkCount) {
+  const functionName = env('SUPABASE_CLEANUP_FUNCTION', 'cleanup_patent_document_chunks')
+  await supabaseRequest(`rpc/${encodeURIComponent(functionName)}`, {
+    method: 'POST',
+    body: JSON.stringify({
+      p_source_id: sourceId,
+      p_keep_chunk_count: keepChunkCount,
+    }),
+  })
+}
+
 const VECTOR_STORE_PROVIDERS = {
   pinecone: { upsert: upsertPinecone, query: queryPinecone },
   chroma: { upsert: upsertChroma, query: queryChroma },
@@ -313,7 +327,7 @@ const VECTOR_STORE_PROVIDERS = {
 }
 
 function getVectorStore() {
-  const provider = env('VECTOR_STORE_PROVIDER', 'pinecone').toLowerCase()
+  const provider = env('VECTOR_STORE_PROVIDER', 'supabase').toLowerCase()
   const store = VECTOR_STORE_PROVIDERS[provider]
   if (!store) {
     throw new Error(

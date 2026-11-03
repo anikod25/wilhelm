@@ -121,24 +121,6 @@
   color: #7ce7dc;
 }
 
-/* Locked nav items (Finance, Legal) */
-.navItemLocked {
-  opacity: 0.38;
-  cursor: default;
-  pointer-events: none;
-}
-
-.navItemLocked:hover {
-  background: none;
-  color: #a7b7c9;
-}
-
-.lockIcon {
-  margin-left: auto;
-  color: #7a8ea6;
-  flex-shrink: 0;
-}
-
 /* Spacer + footer */
 .sidebarSpacer { flex: 1; }
 

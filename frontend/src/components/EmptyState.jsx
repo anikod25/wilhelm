@@ -1,35 +1,21 @@
 import styles from './EmptyState.module.css'
 
-const EXAMPLES = [
-  'How many days of annual leave am I entitled to?',
-  'How do I reset my VPN if it stops connecting?',
-]
-
-export default function EmptyState({ onExampleClick }) {
+export default function EmptyState() {
   return (
     <div className={styles.root}>
-      <h2 className={styles.heading}>Ask Wilhelm anything</h2>
-
+      <div className={styles.icon} aria-hidden="true">IP</div>
+      <p className={styles.eyebrow}>Patent portfolio</p>
+      <h2 className={styles.heading}>Ask Wilhelm about your IP</h2>
       <p className={styles.sub}>
-        HR policy or IT support — grounded answers,
-        <br />
-        reformatted on demand.
+        Check tracker status, ask about a filing, or follow up naturally. Wilhelm can use the patent record and indexed documents to help.
       </p>
-
-      <ul className={styles.chips} aria-label="Example questions">
-        {EXAMPLES.map((query) => (
-          <li key={query}>
-            <button
-              type="button"
-              className={styles.chip}
-              onClick={() => onExampleClick(query)}
-              aria-label={`Ask: ${query}`}
-            >
-              {query}
-            </button>
-          </li>
-        ))}
-      </ul>
+      <div className={styles.examples}>
+        <p>Try a question like:</p>
+        <ul>
+          <li>“What is the status of application number …?”</li>
+          <li>“Explain the latest office action for this application.”</li>
+        </ul>
+      </div>
     </div>
   )
 }

@@ -1,87 +1,10 @@
-/* ── Outer wrapper ────────────────────────────────────────────────── */
 .wrapper {
   display: flex;
   flex-direction: column;
-  padding: 0.55rem 0 0.9rem;
-  gap: 0.55rem;
+  gap: 0.35rem;
+  padding: 0.75rem 0 0.9rem;
 }
 
-/* ── Format segmented bar ─────────────────────────────────────────── */
-.formatBar {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding-left: 0.2rem;
-}
-
-.formatLabel {
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #7a8ea6;
-  user-select: none;
-  white-space: nowrap;
-  flex-shrink: 0;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.segmented {
-  display: inline-flex;
-  background: rgba(12, 23, 37, 0.92);
-  border: 1px solid rgba(118, 146, 174, 0.24);
-  border-radius: 0.4rem;
-  overflow: hidden;
-}
-
-.segBtn {
-  padding: 0.25rem 0.72rem;
-  font-size: 0.72rem;
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.6;
-  background: transparent;
-  border: none;
-  border-right: 1px solid rgba(118, 146, 174, 0.18);
-  color: #9ab0c4;
-  cursor: pointer;
-  transition: background 0.1s, color 0.1s;
-  white-space: nowrap;
-  -webkit-appearance: none;
-}
-
-.segBtn:last-child {
-  border-right: none;
-}
-
-.segBtn:hover:not(:disabled) {
-  background: rgba(148, 163, 184, 0.06);
-  color: #edf4ff;
-}
-
-.segBtn:focus-visible {
-  outline: 2px solid rgba(110, 231, 217, 0.9);
-  outline-offset: -2px;
-  z-index: 1;
-  position: relative;
-}
-
-.segBtnActive {
-  background: rgba(110, 231, 217, 0.12);
-  color: #7ce7dc;
-  font-weight: 600;
-}
-
-.segBtnActive:hover:not(:disabled) {
-  background: rgba(110, 231, 217, 0.16);
-  color: #7ce7dc;
-}
-
-.segBtn:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-
-/* ── Input row ────────────────────────────────────────────────────── */
 .inputRow {
   display: flex;
   align-items: flex-end;
@@ -90,18 +13,19 @@
 
 .textarea {
   flex: 1;
+  min-width: 0;
   resize: none;
-  border: 1px solid rgba(118, 146, 174, 0.24);
-  border-radius: 0.44rem;
-  padding: 0.72rem 0.9rem;
-  font-size: 1rem;
-  font-family: inherit;
-  line-height: 1.5;
-  color: #edf4ff;
-  background: rgba(12, 23, 37, 0.86);
-  transition: border-color 0.15s, box-shadow 0.15s;
   max-height: 10rem;
   overflow-y: auto;
+  padding: 0.72rem 0.9rem;
+  border: 1px solid rgba(118, 146, 174, 0.24);
+  border-radius: 0.65rem;
+  background: rgba(12, 23, 37, 0.86);
+  color: #edf4ff;
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .textarea:focus {
@@ -111,44 +35,32 @@
 }
 
 .textarea::placeholder { color: #6f839c; }
-.textarea:disabled     { opacity: 0.4; cursor: not-allowed; }
+.textarea:disabled { opacity: 0.4; cursor: not-allowed; }
 
-/* ── Send button ──────────────────────────────────────────────────── */
 .sendBtn {
-  flex-shrink: 0;
-  min-width: 6rem;
-  height: 2.8rem;
-  border-radius: 0.5rem;
-  border: 1px solid rgba(110, 231, 217, 0.5);
-  background: linear-gradient(180deg, rgba(92, 234, 212, 0.18), rgba(67, 190, 181, 0.26));
-  color: #d9fffb;
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  font-size: 0.96rem;
-  font-weight: 700;
-  font-family: inherit;
-  cursor: pointer;
-  transition: filter 0.12s ease, transform 0.12s ease, border-color 0.12s ease;
-  position: relative;
+  min-width: 6rem;
+  height: 2.8rem;
   overflow: hidden;
+  border: 1px solid rgba(110, 231, 217, 0.5);
+  border-radius: 0.65rem;
+  background: linear-gradient(180deg, rgba(92, 234, 212, 0.18), rgba(67, 190, 181, 0.26));
+  color: #d9fffb;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.12s ease, transform 0.12s ease;
 }
 
-.sendBtn:hover:not(:disabled) {
-  filter: brightness(1.05);
-  border-color: rgba(110, 231, 217, 0.7);
-}
+.sendBtn:hover:not(:disabled) { filter: brightness(1.08); }
+.sendBtn:active:not(:disabled) { transform: translateY(1px); }
+.sendBtn:disabled { opacity: 0.35; cursor: not-allowed; }
 
-.sendBtn:active:not(:disabled) {
-  transform: translateY(1px);
-}
-
-.sendBtn:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-
-.sendBtn .spinner {
+.spinner {
   display: block;
   width: 0.9rem;
   height: 0.9rem;
@@ -158,8 +70,11 @@
   animation: spin 0.65s linear infinite;
 }
 
-@keyframes spin { to { transform: rotate(360deg); } }
-
-@media (prefers-reduced-motion: reduce) {
-  .sendBtn .spinner { animation-duration: 1.5s; }
+.inputHint {
+  padding-left: 0.25rem;
+  color: #6f839c;
+  font-size: 0.7rem;
 }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spinner { animation-duration: 1.5s; } }

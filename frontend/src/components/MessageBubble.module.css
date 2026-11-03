@@ -1,290 +1,180 @@
-/* ── Row layout + entrance animations ─────────────────────────────── */
 .row {
   display: flex;
   align-items: flex-end;
   gap: 0.5rem;
-  animation-duration: 220ms;
-  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-  animation-fill-mode: both;
+  animation: appear 180ms ease-out both;
 }
 
-.rowUser      { flex-direction: row; justify-content: flex-end; animation-name: slideInRight; }
-.rowAssistant { justify-content: flex-start;                    animation-name: slideInLeft;  }
+.rowUser { justify-content: flex-end; }
+.rowAssistant { justify-content: flex-start; }
 
-@keyframes slideInRight {
-  from { opacity: 0; transform: translateX(12px); }
-  to   { opacity: 1; transform: translateX(0);    }
-}
-@keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-12px); }
-  to   { opacity: 1; transform: translateX(0);     }
+@keyframes appear {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (prefers-reduced-motion: reduce) { .row { animation: none; } }
 
-/* ── Avatars ───────────────────────────────────────────────────────── */
 .avatarAssistant,
 .avatarUser {
-  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  flex: 0 0 1.875rem;
   width: 1.875rem;
   height: 1.875rem;
-  border-radius: 0.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.625rem;
+  border-radius: 0.45rem;
+  font-size: 0.65rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
   user-select: none;
-  align-self: flex-end;
-  margin-bottom: 0.125rem;
 }
 
 .avatarAssistant {
+  border: 1px solid rgba(94, 234, 212, 0.2);
   background: var(--teal-dim);
   color: var(--teal);
-  border: 1px solid rgba(94,234,212,0.2);
 }
 
 .avatarUser {
-  background: rgba(245,166,35,0.12);
+  border: 1px solid rgba(245, 166, 35, 0.2);
+  background: var(--amber-dim);
   color: var(--amber);
-  border: 1px solid rgba(245,166,35,0.2);
 }
 
-/* ── Body ──────────────────────────────────────────────────────────── */
 .body {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
   min-width: 0;
-  max-width: min(32rem, 78%);
+  max-width: min(38rem, 82%);
 }
 
-/* ── Bubble — flat panels, small radius, hairline border, no shadow ── */
 .bubble {
-  padding: 0.625rem 0.875rem;
-  border-radius: 3px;
-  word-break: break-word;
-  line-height: 1.6;
-  font-size: 0.9375rem;
+  padding: 0.8rem 0.95rem;
   border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
-/* User — teal accent bg */
 .bubbleUser {
-  background: rgba(94,234,212,0.1);
+  border-color: rgba(94, 234, 212, 0.22);
+  background: rgba(94, 234, 212, 0.09);
   color: var(--text-primary);
-  border-color: rgba(94,234,212,0.22);
-  border-bottom-right-radius: 1px;
+  border-bottom-right-radius: 0.2rem;
 }
 
-/* Assistant — raised panel */
 .bubbleAssistant {
   background: var(--bg-panel);
   color: var(--text-primary);
-  border-color: var(--border);
-  border-bottom-left-radius: 1px;
-}
-
-/* Structured content — remove padding, flush to bubble edges */
-.bubbleRaw {
-  padding: 0;
-  overflow: hidden;
+  border-bottom-left-radius: 0.2rem;
 }
 
 .content {
   margin: 0;
-  font-size: 0.9375rem;
   white-space: pre-wrap;
-  line-height: 1.65;
 }
 
-/* ── Meta row ──────────────────────────────────────────────────────── */
+.patentCard {
+  margin-top: 0.8rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(94, 234, 212, 0.17);
+  border-radius: 0.55rem;
+  background: rgba(8, 15, 29, 0.45);
+}
+
+.patentHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.recordId {
+  color: var(--teal);
+  font-size: 0.78rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.status {
+  flex: 0 0 auto;
+  padding: 0.25rem 0.55rem;
+  border: 1px solid rgba(94, 234, 212, 0.2);
+  border-radius: 999px;
+  background: rgba(94, 234, 212, 0.1);
+  color: #baf6ec;
+  font-size: 0.72rem;
+  font-weight: 650;
+}
+
+.patentTitle {
+  margin-top: 0.65rem;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.patentFields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1rem;
+  margin-top: 0.75rem;
+}
+
+.patentField dt {
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.patentField dd {
+  margin-top: 0.1rem;
+  color: var(--text-secondary);
+  font-size: 0.76rem;
+  overflow-wrap: anywhere;
+}
+
+.reviewFlag,
+.recordNote {
+  margin-top: 0.7rem;
+  color: #f6cb83;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.recordNote { color: var(--text-secondary); }
+
+.sources {
+  margin-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  padding-top: 0.6rem;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+.sources summary { cursor: pointer; color: var(--teal); }
+.sources ul { display: grid; gap: 0.35rem; margin: 0.55rem 0 0 1rem; }
+.sources li { display: flex; gap: 0.45rem; overflow-wrap: anywhere; }
+.sourceCitation { color: var(--teal); font-weight: 700; }
+
 .meta {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0 0.125rem;
+  padding: 0 0.15rem;
 }
 
 .metaUser { justify-content: flex-end; }
 
 .time {
-  font-size: 0.6875rem;
   color: var(--text-muted);
+  font-size: 0.68rem;
   font-variant-numeric: tabular-nums;
 }
 
-/* ── Domain badges — amber accent, small radius ────────────────────── */
-.badge {
-  font-size: 0.6rem;
-  font-weight: 700;
-  padding: 0.1rem 0.4rem;
-  border-radius: 3px;
-  letter-spacing: 0.03em;
-  text-transform: none;
-  border: 1px solid transparent;
-}
-
-.badge_hr,
-.badge_support {
-  background: var(--amber-dim);
-  color: var(--amber);
-  border-color: rgba(245,166,35,0.25);
-}
-
-.badge_out_of_scope {
-  background: rgba(139,148,173,0.1);
-  color: var(--text-secondary);
-  border-color: var(--border);
-}
-
-/* ════════════════════════════════════════════════════════════════════
-   STRUCTURED FORMAT RENDERS
-   ════════════════════════════════════════════════════════════════════ */
-
-.copyBtn {
-  padding: 0.175rem 0.5rem;
-  font-size: 0.6875rem;
-  font-family: inherit;
-  font-weight: 600;
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 3px;
-  background: rgba(255,255,255,0.06);
-  color: inherit;
-  cursor: pointer;
-  transition: background 0.12s;
-  white-space: nowrap;
-}
-.copyBtn:hover { background: rgba(255,255,255,0.12); }
-.copyBtn:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
-
-/* Code block */
-.codeBlock {
-  display: flex;
-  flex-direction: column;
-  border-radius: inherit;
-  font-size: 0.8125rem;
-  overflow: hidden;
-}
-
-.codeHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.375rem 0.75rem;
-  background: #0d1117;
-  color: var(--text-secondary);
-}
-
-.codeLang {
-  font-size: 0.625rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--teal);
-}
-
-.codePre {
-  margin: 0;
-  padding: 0.875rem 1rem;
-  background: #0d1117;
-  color: #cdd6f4;
-  font-family: 'Fira Code', 'Cascadia Code', 'Consolas', 'Menlo', monospace;
-  font-size: 0.8125rem;
-  line-height: 1.65;
-  overflow-x: auto;
-  white-space: pre;
-  max-height: 26rem;
-  overflow-y: auto;
-}
-
-/* Excel download */
-.downloadWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 0.375rem;
-  padding: 1rem 1.125rem;
-}
-
-.downloadBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 0.875rem;
-  background: rgba(94,234,212,0.12);
-  color: var(--teal);
-  border: 1px solid rgba(94,234,212,0.3);
-  font-size: 0.875rem;
-  font-family: inherit;
-  font-weight: 600;
-  border-radius: 3px;
-  text-decoration: none;
-  transition: background 0.12s;
-  width: fit-content;
-}
-
-.downloadBtn:hover  { background: rgba(94,234,212,0.2); }
-.downloadBtn:active { transform: scale(0.97); }
-.downloadBtn:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
-.downloadIcon { flex-shrink: 0; }
-
-.downloadHint {
-  font-size: 0.6875rem;
-  color: var(--text-muted);
-}
-
-/* Email draft */
-.emailDraft {
-  display: flex;
-  flex-direction: column;
-  background: var(--bg-raised);
-  border-radius: inherit;
-  overflow: hidden;
-}
-
-.emailHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.375rem 0.75rem;
-  background: rgba(245,166,35,0.15);
-  border-bottom: 1px solid rgba(245,166,35,0.2);
-  color: var(--amber);
-}
-
-.emailLabel {
-  font-size: 0.625rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.emailHeader .copyBtn {
-  border-color: rgba(245,166,35,0.25);
-  background: rgba(245,166,35,0.08);
-  color: var(--amber);
-}
-
-.emailSubject {
-  padding: 0.5rem 0.875rem 0.375rem;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  border-bottom: 1px solid var(--border);
-  word-break: break-word;
-}
-
-.emailBody {
-  margin: 0;
-  padding: 0.625rem 0.875rem 0.875rem;
-  font-family: inherit;
-  font-size: 0.8125rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  white-space: pre-wrap;
-  word-break: break-word;
-  max-height: 26rem;
-  overflow-y: auto;
+@media (max-width: 520px) {
+  .patentHeader { align-items: flex-start; flex-direction: column; }
+  .patentFields { grid-template-columns: minmax(0, 1fr); }
 }

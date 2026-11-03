@@ -4,3 +4,6 @@ dist/
 .env.*
 !.env.example
 .DS_Store
+
+# Private local patent filings/documents are indexed but never committed.
+/data/patent-documents/

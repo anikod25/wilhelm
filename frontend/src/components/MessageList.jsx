@@ -11,10 +11,9 @@ import styles        from './MessageList.module.css'
  * @param {{
  *   messages:        import('../data/dummyMessages.js').Message[],
  *   isLoading:       boolean,
- *   onExampleClick:  (query: string) => void,
  * }} props
  */
-export default function MessageList({ messages, isLoading, onExampleClick }) {
+export default function MessageList({ messages, isLoading }) {
   const bottomRef = useRef(null)
 
   useEffect(() => {
@@ -33,7 +32,7 @@ export default function MessageList({ messages, isLoading, onExampleClick }) {
       aria-label="Conversation"
     >
       {isEmpty ? (
-        <EmptyState onExampleClick={onExampleClick} />
+        <EmptyState />
       ) : (
         <>
           {messages.map((msg) => (
@@ -42,7 +41,7 @@ export default function MessageList({ messages, isLoading, onExampleClick }) {
 
           {/* Typing indicator */}
           {isLoading && (
-            <div className={styles.typingRow} aria-live="assertive" aria-label="Wilhelm is typing">
+            <div className={styles.typingRow} aria-live="assertive" aria-label="Wilhelm is checking the tracker">
               <div className={styles.typingAvatar} aria-hidden="true">W</div>
               <div className={styles.typingBubble}>
                 <span className={styles.dot} />

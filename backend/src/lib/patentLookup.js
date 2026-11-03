@@ -5,7 +5,7 @@
 
 import 'dotenv/config'
 
-const PATENT_VIEW = 'patents_overview'
+const PATENT_VIEW = process.env.SUPABASE_PATENT_VIEW || 'patents'
 const REQUEST_TIMEOUT_MS = 8000
 
 // Adjust to the columns the view actually exposes.

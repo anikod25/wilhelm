@@ -5,9 +5,31 @@
   align-items: center;
   justify-content: center;
   padding: 2rem 1.5rem 3rem;
-  gap: 0.9rem;
+  gap: 0.75rem;
   text-align: center;
   animation: enter 280ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px solid rgba(94, 234, 212, 0.26);
+  border-radius: 1rem;
+  background: var(--teal-dim);
+  color: var(--teal);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+
+.eyebrow {
+  color: var(--teal);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 @keyframes enter {
@@ -35,41 +57,21 @@
   font-weight: 400;
 }
 
-.chips {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  width: min(100%, 32rem);
-  margin-top: 0.6rem;
+.examples {
+  width: min(100%, 34rem);
+  margin-top: 0.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: rgba(19, 27, 46, 0.72);
+  color: var(--text-secondary);
+  text-align: left;
+  font-size: 0.85rem;
 }
 
-.chip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 0.8rem 1.2rem;
-  background: rgba(17, 33, 48, 0.85);
-  border: 1px solid rgba(96, 125, 153, 0.24);
-  border-radius: 999px;
-  color: #dfeaf7;
-  font-family: inherit;
-  font-size: 1.02rem;
-  line-height: 1.45;
-  cursor: pointer;
-  text-align: center;
-  transition: border-color 0.12s ease, background 0.12s ease, transform 0.12s ease;
-}
-
-.chip:hover {
-  background: rgba(24, 42, 59, 0.92);
-  border-color: rgba(125, 191, 177, 0.36);
-}
-
-.chip:active { transform: translateY(1px); }
-
-.chip:focus-visible {
-  outline: 2px solid rgba(110, 231, 217, 0.9);
-  outline-offset: 2px;
+.examples ul {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.6rem 0 0 1rem;
+  color: var(--text-primary);
 }

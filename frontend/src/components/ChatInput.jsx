@@ -1,72 +1,37 @@
 import { useState, useRef, useCallback } from 'react'
 import styles from './ChatInput.module.css'
 
-/** @type {{ value: string; label: string }[]} */
-const FORMAT_OPTIONS = [
-  { value: 'plain', label: 'Plain' },
-  { value: 'json',  label: 'JSON'  },
-  { value: 'xml',   label: 'XML'   },
-  { value: 'xlsx',  label: 'Excel' },
-  { value: 'email', label: 'Email' },
-]
-
-/**
- * Message input bar: segmented format selector + textarea + send button.
- *
- * @param {{
- *   onSend:    (text: string, format: string) => void,
- *   isLoading: boolean,
- *   disabled?: boolean,
- * }} props
- */
 export default function ChatInput({ onSend, isLoading, disabled = false }) {
-  const [text,   setText]   = useState('')
-  const [format, setFormat] = useState('plain')
+  const [text, setText] = useState('')
   const textareaRef = useRef(null)
 
   const handleSubmit = useCallback(() => {
     const trimmed = text.trim()
     if (!trimmed || isLoading || disabled) return
-    onSend(trimmed, format)
+    onSend(trimmed)
     setText('')
     if (textareaRef.current) textareaRef.current.style.height = 'auto'
-  }, [text, format, isLoading, disabled, onSend])
+  }, [text, isLoading, disabled, onSend])
 
-  const handleKeyDown = useCallback((e) => {
-    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSubmit() }
+  const handleKeyDown = useCallback((event) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault()
+      handleSubmit()
+    }
   }, [handleSubmit])
 
-  const handleChange = useCallback((e) => {
-    setText(e.target.value)
-    const ta = e.target
-    ta.style.height = 'auto'
-    ta.style.height = `${ta.scrollHeight}px`
+  const handleChange = useCallback((event) => {
+    setText(event.target.value)
+    event.target.style.height = 'auto'
+    event.target.style.height = `${event.target.scrollHeight}px`
   }, [])
 
   const canSend = text.trim().length > 0 && !isLoading && !disabled
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.formatBar} role="group" aria-label="Response format">
-        <span className={styles.formatLabel}>Format</span>
-        <div className={styles.segmented}>
-          {FORMAT_OPTIONS.map(({ value, label }) => (
-            <button
-              key={value}
-              type="button"
-              className={`${styles.segBtn} ${format === value ? styles.segBtnActive : ''}`}
-              onClick={() => setFormat(value)}
-              aria-pressed={format === value}
-              disabled={disabled}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-      </div>
-
       <div className={styles.inputRow}>
-        <label htmlFor="chat-input" className="visually-hidden">Type your message</label>
+        <label htmlFor="chat-input" className="visually-hidden">Ask about an IP tracker record</label>
         <textarea
           id="chat-input"
           ref={textareaRef}
@@ -74,25 +39,18 @@ export default function ChatInput({ onSend, isLoading, disabled = false }) {
           value={text}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
-          placeholder="Ask about HR policy or IT support..."
+          placeholder="Ask about a patent or enter an application number…"
           rows={1}
           disabled={disabled}
-          aria-label="Message input"
+          aria-label="Ask about an IP tracker record"
           aria-describedby="send-hint"
         />
-        <span id="send-hint" className="visually-hidden">
-          Press Enter to send, Shift+Enter for a new line
-        </span>
-        <button
-          type="button"
-          className={styles.sendBtn}
-          onClick={handleSubmit}
-          disabled={!canSend}
-          aria-label="Send message"
-        >
-          {isLoading ? <span className={styles.spinner} aria-hidden="true" /> : 'Send'}
+        <span id="send-hint" className="visually-hidden">Press Enter to send, Shift+Enter for a new line</span>
+        <button type="button" className={styles.sendBtn} onClick={handleSubmit} disabled={!canSend} aria-label="Look up record">
+          {isLoading ? <span className={styles.spinner} aria-hidden="true" /> : 'Look up'}
         </button>
       </div>
+      <p className={styles.inputHint}>Ask a follow-up or question about a patent document at any time.</p>
     </div>
   )
 }
